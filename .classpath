@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="BoulderDash/contract/src/main/java"/>
+	<classpathentry kind="src" path="BoulderDash/contract/src/test/java"/>
+	<classpathentry kind="src" path="BoulderDash/controller/src/main/java"/>
+	<classpathentry kind="src" path="BoulderDash/main/src/main/java"/>
+	<classpathentry kind="src" path="BoulderDash/model/src/main/java"/>
+	<classpathentry kind="src" path="BoulderDash/view/src/main/java"/>
+	<classpathentry kind="lib" path="BoulderDash/contract/target/contract-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="BoulderDash/controller/target/controller-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="BoulderDash/main/target/main-0.0.1-SNAPSHOT-shaded.jar"/>
+	<classpathentry kind="lib" path="BoulderDash/main/target/main-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="BoulderDash/main/target/original-main-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="BoulderDash/model/target/model-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="BoulderDash/view/target/view-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="BoulderDash/contract/target/classes"/>
+</classpath>
