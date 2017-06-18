@@ -17,7 +17,7 @@ public abstract class Mobile {
 	public void moveLeft(){
 		return;
 	}
-	
+	 
 	public void moveDown(){
 		return;
 	}
