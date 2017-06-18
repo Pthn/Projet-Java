@@ -2,6 +2,7 @@ package model;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import model.dao.ExampleDAO;
 
@@ -46,5 +47,19 @@ public class ModelFacade implements IModel {
     public List<Example> getAllExamples() throws SQLException {
         return ExampleDAO.getAllExamples();
     }
+    
+    public Map getMap(int id) {
+		return null;
+	}
+    
+    public Map getMapById(String id) {
+    	return null;
+    }
+    
+    public List<Map> getAllMap(){
+		return null;
+    }
+    
+    
 
 }

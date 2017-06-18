@@ -1,11 +1,14 @@
 package model;
 
+import java.util.Observable;
+
 public class Map {
+	
 	private int width;
 	private int height;
 	
 	package Map(String fileName){
-		
+
 	}
 	
 	private void loadFile(String fileName){
