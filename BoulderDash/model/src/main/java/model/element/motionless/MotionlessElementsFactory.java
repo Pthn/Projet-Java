@@ -1,31 +1,41 @@
 package model.element.motionless;
 
+
+
 public abstract class MotionlessElementsFactory {
 	
-	private static BlockFond blockfond = new BlockFond();
-	private static BlockMur blockmur = new BlockMur();
-	private static BlockTerre blockterre = new BlockTerre();
-	private static BlockDiamond blockdiamond = new BlockDiamond();
-	private static BlockRocher blockrocher = new BlockRocher();
+	private static final BlockFond blockFond = new BlockFond();
+	private static final BlockMur blockMur = new BlockMur();
+	private static final BlockTerre blockTerre = new BlockTerre();
+	private static final BlockDiamond blockDiamond = new BlockDiamond();
+	private static final BlockRocher blockRocher = new BlockRocher();
+	
+	
+	private static MotionlessElement[]       motionlessElements  = {
+	        BlockFond,
+	        BlockMur,
+	        BlockTerre,
+	        BlockDiamond,
+	        BlockRocher};
 	
 	public static MotionlessElement createBlockFond(){
-		return null;
+		return blockFond;
 	}
 	
 	public static MotionlessElement createBlockMur(){
-		return null;
+		return blockMur;
 	}
 	
 	public static MotionlessElement createBlockTerre(){
-		return null;
+		return blockTerre;
 	}
 	
 	public static MotionlessElement createBlockDiamond(){
-		return null;
+		return blockDiamond;
 	}
 	
 	public static MotionlessElement createBlockRocher(){
-		return null;
+		return blockRocher;
 	}
 	
 	public static MotionlessElement getFromFileSymbol(char fileSymbol){
