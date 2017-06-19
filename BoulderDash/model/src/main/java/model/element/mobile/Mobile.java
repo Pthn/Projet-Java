@@ -1,7 +1,6 @@
 package model.element.mobile;
 import java.awt.Point;
 
-<<<<<<< HEAD
 import model.IMap;
 import model.IMobile;
 import model.element.Element;
@@ -10,18 +9,13 @@ import model.element.Sprite;
 
 public abstract class Mobile  extends Element implements IMobile{
 
-=======
-import java.awt.Point;
 
-import model.IMap;
-
-public abstract class Mobile {
 	
->>>>>>> branch 'master' of https://github.com/Pthn/Projet-Java.git
+
 	private Point position;
 	private boolean alive = true;
 	private IMap map;
-<<<<<<< HEAD
+
 	
 	
 	Mobile(final Sprite sprite, final IMap map, final Permeability permeability){
@@ -34,8 +28,7 @@ public abstract class Mobile {
         this.setX(x);
         this.setY(y);
     }
-=======
->>>>>>> branch 'master' of https://github.com/Pthn/Projet-Java.git
+
 	
 	public void moveUp(){
         this.setY(this.getY() - 1);
