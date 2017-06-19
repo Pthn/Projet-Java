@@ -23,7 +23,7 @@ public class SpriteTest {
 
 	    @Before
 	    public void setUp() throws Exception {
-	       Sprite sprite = new Sprite("", "MyHero.png");
+	       Sprite sprite = new Sprite((char) 0, "MyHero.png");
 	    }
 
 	    @After

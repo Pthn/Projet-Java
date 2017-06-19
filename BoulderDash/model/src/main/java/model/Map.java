@@ -15,7 +15,7 @@ public class Map extends Observable implements IMap{
 	private int height;
 	private IElement[][] onTheMap;
 	
-	Map(String fileName) throws IOException{
+	public Map(String fileName) throws IOException{
 		super();
 		this.loadFile(fileName);
 	}
@@ -71,6 +71,9 @@ public class Map extends Observable implements IMap{
 	public void setMobileHasChanged(){
 		this.setChanged();
         this.notifyObservers();
+	}
+	public void getSprite(){
+		return;
 	}
 	
 	

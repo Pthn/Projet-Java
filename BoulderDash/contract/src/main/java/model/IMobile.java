@@ -11,10 +11,8 @@ public interface IMobile {
 		void doNothing();
 		int getX();
 		int getY();
-		Boolean isAlive();
-		
-		Point getPosition();
-		
-		
-	
+
+		public Boolean isAlive();
+		public Point getPosition();
+
 }

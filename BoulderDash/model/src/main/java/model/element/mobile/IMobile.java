@@ -3,14 +3,16 @@ package model.element.mobile;
 import java.awt.Point;
 
 public interface IMobile {
-	public void moveUp();
-	public void moveLeft();
-	public void moveDown();
-	public void moveRight();
-	public void doNothing();
-	public int getX();
-	public int getY();
-	public boolean isAlive();
-	public Point getPosition();
+
+		void moveUp();
+		void moveLeft();
+		void moveDown();
+		void moveRight();
+		void doNothing();
+		int getX();
+		int getY();
+		public boolean getSprite();
+		public boolean isAlive();
+		public Point getPosition();
+
 }
- 
