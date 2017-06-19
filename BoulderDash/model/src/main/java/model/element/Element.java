@@ -1,5 +1,7 @@
 package model.element;
 
+import java.awt.Image;
+
 public abstract class Element {
 	public Element(Sprite sprite, Permeability permeability){
 	}

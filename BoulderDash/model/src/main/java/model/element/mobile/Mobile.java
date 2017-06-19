@@ -1,14 +1,14 @@
 package model.element.mobile;
 
+import java.awt.Point;
+
+import model.IMap;
+
 public abstract class Mobile {
 	
 	private Point position;
 	private boolean alive = true;
-	private IBoard board;
 	private IMap map;
-	
-	
-	package Mobile();
 	
 	public void moveUp(){
 		return;
@@ -74,8 +74,5 @@ public abstract class Mobile {
 		return;
 	}
 	
-	protected IBoard getBoard(){
-		return null;
-	}
 	
 }
