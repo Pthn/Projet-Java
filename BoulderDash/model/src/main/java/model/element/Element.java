@@ -2,9 +2,15 @@ package model.element;
 
 import java.awt.Image;
 
+<<<<<<< HEAD
 
 
 public abstract class Element{
+=======
+public abstract class Element {
+	public Element(Sprite sprite, Permeability permeability){
+	}
+>>>>>>> branch 'master' of https://github.com/Pthn/Projet-Java.git
 	
     private Sprite sprite;
 

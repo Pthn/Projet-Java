@@ -1,5 +1,7 @@
 package model.element.mobile;
 
+import model.IMap;
+
 public class BlockDiamondFall {
 	public BlockDiamondFall(int x, int y, IMap map){
 	}

@@ -7,7 +7,7 @@ public class Map {
 	private int width;
 	private int height;
 	
-	package Map(String fileName){
+	package map(String fileName){
 
 	}
 	
