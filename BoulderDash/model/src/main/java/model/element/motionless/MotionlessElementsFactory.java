@@ -1,7 +1,5 @@
 package model.element.motionless;
 
-
-
 public abstract class MotionlessElementsFactory {
 	
 	private static final BlockFond blockFond = new BlockFond();
@@ -12,11 +10,11 @@ public abstract class MotionlessElementsFactory {
 	
 	
 	private static MotionlessElement[]       motionlessElements  = {
-	        BlockFond,
-	        BlockMur,
-	        BlockTerre,
-	        BlockDiamond,
-	        BlockRocher};
+	        blockFond,
+	        blockMur,
+	        blockTerre,
+	        blockDiamond,
+	        blockRocher};
 	
 	public static MotionlessElement createBlockFond(){
 		return blockFond;
@@ -38,7 +36,13 @@ public abstract class MotionlessElementsFactory {
 		return blockRocher;
 	}
 	
-	public static MotionlessElement getFromFileSymbol(char fileSymbol){
-		return null;
-	}
+
+	public static MotionlessElement getFromFileSymbol(final char fileSymbol) {
+        for (final MotionlessElement motionlessElement : motionlessElements) {
+            if (motionlessElement.getSprite().getConsoleImage() == fileSymbol) {
+                return motionlessElement;
+            }
+        }
+        return null ;
+    }
 }

@@ -1,22 +1,36 @@
 package model;
 
-public class BoulderdashModel {
-	public BoulderdashModel(String fileName, int myHeroStartX, int myHeroStartY){	
+import java.io.IOException;
+
+import model.element.mobile.IMobile;
+import model.element.mobile.MyHero;
+
+
+public class BoulderdashModel implements IBoulderdashModel {
+	
+    private IMap map;
+
+    private IMobile myHero;
+
+	public BoulderdashModel(final String fileName, final int myHeroStartX, final int myHeroStartY) throws IOException{	
+		this.setMap(new Map(fileName));
+        this.setMyHero(new MyHero(myHeroStartX, myHeroStartY, this.getMap()));
 	}
 	
+	
 	public IMap getMap(){
-		return null;
+		return this.map;
 	}
 	
 	public IMobile getMyHero(){
-		return null;
+		return this.myHero;
 	}
 	
 	private void setMap(IMap map){
-		return;
+		this.map = map;
 	}
 	
-	private void setMyHero(IMobile myHero){
-		return;
+	private void setMyHero(final MyHero myHero){
+		this.myHero = (IMobile) myHero;
 	}
 }

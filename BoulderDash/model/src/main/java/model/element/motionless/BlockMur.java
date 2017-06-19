@@ -1,14 +1,14 @@
 package model.element.motionless;
 
-import model.element.Sprite;
+import  model.element.motionless.MotionlessElement;
 import model.element.Permeability;
+import model.element.Sprite;
 
 public class BlockMur extends MotionlessElement{
 	
 	private static final Sprite SPRITE = new Sprite(')', "BlockMur.jpg");
 
 	BlockMur() {
-		super(SPRITE, Permeability.PENETRABLE);
+		super(SPRITE, Permeability.BLOCKING);
 	}
 }
- 

@@ -85,13 +85,13 @@ public abstract class Mobile  extends Element implements IMobile{
 		this.map = map;
 	}
 	
-	public boolean isAlive(){
+	public Boolean isAlive(){
 		return this.alive;
 	}
 
-	public void changeToStatic(){
-		return this.getMap().getOnTheMapXY(this.getX(), this.getY()).getPermeability() == Permeability.BLOCKING;
-	}
+    public Boolean changeToStatic() {
+        return this.getMap().getOnTheMapXY(this.getX(), this.getY()).getPermeability() == Permeability.BLOCKING;
+    }
 	
 	public Point getPosition(){
 		return this.position;

@@ -1,11 +1,11 @@
 package model;
-
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Observable;
 
+import model.element.IElement;
 import model.element.motionless.MotionlessElementsFactory;
 
 
@@ -13,6 +13,7 @@ public class Map extends Observable implements IMap{
 	
 	private int width;
 	private int height;
+	private IElement[][] onTheMap;
 	
 	Map(String fileName) throws IOException{
 		super();
@@ -47,8 +48,8 @@ public class Map extends Observable implements IMap{
 		return this.height;
 	}
 	
-	public IElement getOnTheMapXY(int x, int y){
-		return this.onTheMapXY[x][y];
+	public IElement getOnTheMapXY(final int x, final int y){
+		return this.onTheMap[x][y];
 	}
 	
 	public Observable getObservable(){
@@ -63,7 +64,7 @@ public class Map extends Observable implements IMap{
 		return;
 	}
 	
-	private void setOnTheMapXY(IElement element, int x, int y){
+	private void setOnTheMapXY(final IElement element, final int x, final int y){
 		this.onTheMap[x][y] = element;
 	}
 	

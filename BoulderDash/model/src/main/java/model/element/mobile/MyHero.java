@@ -20,7 +20,6 @@ public class MyHero extends Mobile{
 	        spriteTurnRight.loadImage();
 	        spriteTurnDown.loadImage();
 	        spriteTurnUp.loadImage();
-	        spriteExplode.loadImage();
 	    }
 
 	

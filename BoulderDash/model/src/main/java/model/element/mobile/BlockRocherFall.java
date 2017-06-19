@@ -1,16 +1,28 @@
 package model.element.mobile;
 
-import model.IMap;
+import java.io.IOException;
 
-public class BlockRocherFall {
-	public BlockRocherFall(int x, int y, IMap map){
+import model.IMap;
+import model.element.Permeability;
+import model.element.Sprite;
+
+public class BlockRocherFall extends Mobile{
+	 private static final Sprite spriteRocher = new Sprite('H', "Rocher.png");
+
+	public BlockRocherFall(final int x, final int y, IMap map) throws IOException {
+		 super(x, y, sprite, map, Permeability.BLOCKING);
+	        spriteRocher.loadImage();
 	}
 	
-	public void moveDown(){
-		return;
-	}
+	public final void moveDown() {
+       super.moveDown();
+       this.setSprite(spriteRocher);
+		
+   }
 	
-	public void changeToStatic(){
-		return;
+	public final Boolean changeToStatic(){
+		 super.changeToStatic();
+		 this.setSprite(spriteRocher);
+		return null;
 	}
 }

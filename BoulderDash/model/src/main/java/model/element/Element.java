@@ -8,7 +8,7 @@ public abstract class Element implements IElement{
 
 
 	
-    private Sprite sprite;
+    protected static Sprite sprite;
 
 
     private Permeability permeability;
@@ -25,7 +25,7 @@ public abstract class Element implements IElement{
     }
 
 
-    private void setSprite(final Sprite sprite) {
+    protected void setSprite(final Sprite sprite) {
         this.sprite = sprite;
     }
 
