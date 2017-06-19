@@ -2,10 +2,12 @@ package model.element.mobile;
 import java.awt.Point;
 
 import model.IMap;
+import model.IMobile;
+import model.element.Element;
 import model.element.Permeability;
 import model.element.Sprite;
 
-public abstract class Mobile {
+public abstract class Mobile  extends Element implements IMobile{
 
 	private Point position;
 	private boolean alive = true;
@@ -48,7 +50,7 @@ public abstract class Mobile {
 		this.setHasMoved();
 	}
 	
-	private void sheHasMoved(){
+	private void setHasMoved(){
 		this.getMap().setMobileHasChanged();
 	}
 	
