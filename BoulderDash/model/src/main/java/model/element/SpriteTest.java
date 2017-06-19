@@ -1,6 +1,8 @@
-package model.element.mobile;
+package model.element;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertEquals;
+
+import javax.imageio.ImageIO;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -8,13 +10,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import model.IMap;
-
-public class BlockDiamondFallTest{
-
-
-	private BlockDiamondFall blockdiamondfall;
+public class SpriteTest {
 	
+	private Sprite sprite;
 	 @BeforeClass
 	    public static void setUpBeforeClass() throws Exception {
 	    }
@@ -25,26 +23,16 @@ public class BlockDiamondFallTest{
 
 	    @Before
 	    public void setUp() throws Exception {
-	        this.blockdiamondfall = new BlockDiamondFall(x, y, map);
+	       Sprite sprite = new Sprite("", "MyHero.png");
 	    }
 
 	    @After
 	    public void tearDown() throws Exception {
 	    }
-
 	@Test
-	public void testBlockDiamondFall() {
-		fail("Not yet implemented");
+	public void testLoadImage() {
+		final String expected = "MyHero.png";
+        assertEquals(expected, ImageIO.read("images/" + sprite.getImageName()));
 	}
 
-	@Test
-	public void testMoveDown() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testChangeToStatic() {
-		fail("Not yet implemented");
-	}
- 
 }
