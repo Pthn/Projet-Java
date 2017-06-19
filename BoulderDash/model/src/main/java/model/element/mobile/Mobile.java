@@ -93,6 +93,8 @@ public abstract class Mobile {
 	public void setPosition(final Point position){
 		this.position = position;
 	}
+
+	
 	
 
 }
