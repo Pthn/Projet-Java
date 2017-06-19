@@ -9,6 +9,9 @@ public class BoulderdashView
 	private IOrderPerformer orderPerformer;
 	private IMobile enemy;
 	
+	
+	
+	
 		public BoulderdashView(IMap map, IMoblie myHero);
 		public void displayMessage(String message);
 		public void run();
