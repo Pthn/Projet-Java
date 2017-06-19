@@ -26,4 +26,4 @@ public class BlockDiamondFall extends Mobile{
 		 this.setSprite(spriteDiamond);
 		return null;
 	}
-}
+} 

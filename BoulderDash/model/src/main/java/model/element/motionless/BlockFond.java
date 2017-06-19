@@ -12,4 +12,4 @@ public class BlockFond extends MotionlessElement{
 		super(SPRITE, Permeability.PENETRABLE);
 	}
 }
- 
+  

@@ -46,5 +46,5 @@ public class BlockDiamondFallTest{
 	public void testChangeToStatic() {
 		fail("Not yet implemented");
 	}
-
+ 
 }

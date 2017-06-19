@@ -12,4 +12,4 @@ public class BlockTerre extends MotionlessElement{
 		super(SPRITE, Permeability.PENETRABLE);
 	}
 }
- 
+  

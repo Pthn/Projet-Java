@@ -12,4 +12,4 @@ public class BlockRocher extends MotionlessElement{
 		super(SPRITE, Permeability.PENETRABLE);
 	}
 }
- 
+  

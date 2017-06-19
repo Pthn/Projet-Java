@@ -13,3 +13,4 @@ public interface IMobile {
 	public boolean isAlive();
 	public Point getPosition();
 }
+ 

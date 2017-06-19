@@ -25,4 +25,4 @@ public class BlockRocherFall extends Mobile{
 		 this.setSprite(spriteRocher);
 		return null;
 	}
-}
+} 

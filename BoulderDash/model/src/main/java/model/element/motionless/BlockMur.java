@@ -12,3 +12,4 @@ public class BlockMur extends MotionlessElement{
 		super(SPRITE, Permeability.BLOCKING);
 	}
 }
+ 

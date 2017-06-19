@@ -21,7 +21,7 @@ public class MyHero extends Mobile{
 	        spriteTurnDown.loadImage();
 	        spriteTurnUp.loadImage();
 	    }
-
+ 
 	
 	    public final void moveLeft() {
 	        super.moveLeft();

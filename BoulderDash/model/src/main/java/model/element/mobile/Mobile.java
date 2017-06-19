@@ -92,7 +92,7 @@ public abstract class Mobile  extends Element implements IMobile{
     public Boolean changeToStatic() {
         return this.getMap().getOnTheMapXY(this.getX(), this.getY()).getPermeability() == Permeability.BLOCKING;
     }
-	
+	 
 	public Point getPosition(){
 		return this.position;
 	}

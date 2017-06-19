@@ -12,4 +12,4 @@ public class BlockDiamond extends MotionlessElement{
 		super(SPRITE, Permeability.PENETRABLE);
 	}
 }
- 
+  

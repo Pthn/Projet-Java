@@ -10,3 +10,4 @@ public abstract class MotionlessElement extends Element {
 		 super(sprite, permeability);
 	}
 }
+ 

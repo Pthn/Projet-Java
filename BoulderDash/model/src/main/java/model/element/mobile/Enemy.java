@@ -36,5 +36,5 @@ public class Enemy extends Mobile{
 		 super.changeToStatic();
 		 this.setSprite(spriteEnemy);
 		return null;
-	}
+	} 
 }
