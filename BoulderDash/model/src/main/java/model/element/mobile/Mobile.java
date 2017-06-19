@@ -1,81 +1,107 @@
 package model.element.mobile;
+import java.awt.Point;
 
-public abstract class Mobile {
+import model.IMap;
+import model.IMobile;
+import model.element.Element;
+import model.element.Permeability;
+import model.element.Sprite;
+
+public abstract class Mobile  extends Element implements IMobile{
+
+
 	
+
 	private Point position;
 	private boolean alive = true;
-	private IBoard board;
 	private IMap map;
+
 	
 	
-	package Mobile();
+	Mobile(final Sprite sprite, final IMap map, final Permeability permeability){
+        super(sprite, permeability);
+        this.setMap(map);
+        this.position = new Point();
+	}
+    Mobile(final int x, final int y, final Sprite sprite, final IMap map, final Permeability permeability) {
+        this(sprite, map, permeability);
+        this.setX(x);
+        this.setY(y);
+    }
+
 	
 	public void moveUp(){
-		return;
+        this.setY(this.getY() - 1);
+        this.setHasMoved();
 	}
 	
 	public void moveLeft(){
-		return;
+        this.setX(this.getX() - 1);
+        this.setHasMoved();
 	}
 	 
 	public void moveDown(){
-		return;
-	}
+	       this.setY(this.getY() + 1);
+	        this.setHasMoved();
+	    }
+	
 	
 	public void moveRight(){
-		return;
+		this.setX(this.getX() + 1);
+        this.setHasMoved();
 	}
 	
 	public void doNothing(){
-		return;
+		this.setHasMoved();
 	}
 	
-	private void sheHasMoved(){
-		return;
+	private void setHasMoved(){
+		this.getMap().setMobileHasChanged();
 	}
 	
 	public int getX(){
-		return 0;
+		return this.getPosition().x;
 	}
 	
-	private void setX(){
-		return;
-	}
+    public final void setX(final int x) {
+        this.getPosition().x = x;
+       
+        }
 	
-	public int getY(){
-		return 0;
-	}
-	
-	private void setY(){
-		return;
-	}
+    public final int getY() {
+        return this.getPosition().y;
+    }
+
+    public final void setY(final int y) {
+        this.getPosition().y = (y + this.getMap().getHeight()) % this.getMap().getHeight();
+
+    }
 	
 	public IMap getMap(){
-		return null;
+		return this.map;
 	}
 	
-	private void setMap(){
-		return;
+	private void setMap(final IMap map){
+		this.map = map;
 	}
 	
 	public boolean isAlive(){
-		return true;
+		return this.alive;
 	}
-	
+
 	public void changeToStatic(){
-		return;
+		return this.getMap().getOnTheMapXY(this.getX(), this.getY()).getPermeability() == Permeability.BLOCKING;
 	}
 	
 	public Point getPosition(){
-		return null;
+		return this.position;
 	}
 	
-	public void setPosition(){
-		return;
+	public void setPosition(final Point position){
+		this.position = position;
 	}
+
 	
-	protected IBoard getBoard(){
-		return null;
-	}
 	
+
 }
