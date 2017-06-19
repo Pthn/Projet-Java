@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import model.Map;
+import model.Map; 
 public class MobileTest {
 	private Map map;
 

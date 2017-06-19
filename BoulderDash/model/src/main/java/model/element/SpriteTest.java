@@ -11,7 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class SpriteTest {
-	
+	 
 	private Sprite sprite;
 	 @BeforeClass
 	    public static void setUpBeforeClass() throws Exception {
@@ -32,7 +32,7 @@ public class SpriteTest {
 	@Test
 	public void testLoadImage() {
 		final String expected = "MyHero.png";
-        assertEquals(expected, ImageIO.read("images/" + sprite.getImageName()));
+        assertEquals(expected,("images/" + sprite.getImageName()));
 	}
 
 }
