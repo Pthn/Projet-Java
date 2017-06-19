@@ -12,6 +12,7 @@ public interface IMobile {
 		int getX();
 		int getY();
 		Boolean isAlive();
+		
 		Point getPosition();
 		
 		
