@@ -20,6 +20,8 @@ public abstract class Element {
 		return;
 	}
 	
+	
+	
 	public Image getImage(){
 		return null;
 	}
