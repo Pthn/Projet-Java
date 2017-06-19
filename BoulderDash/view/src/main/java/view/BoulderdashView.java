@@ -22,6 +22,7 @@ public class BoulderdashView
 		public void keyReleased(KeyEvent keyEvent);
 		public void followMyHero();
 		
+		
 			public IMap getMap()
 			{
 				return map;
