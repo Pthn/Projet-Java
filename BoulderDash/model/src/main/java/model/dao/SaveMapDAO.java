@@ -8,16 +8,16 @@ import java.util.ArrayList;
 public class SaveMapDAO extends AbstractDAO {
 
 
-    private static String sqlmap1  = "{call returnmap1(?)}";
+    private static String sqlmap1  = "{call map1(?)}";
 
 
-    private static String sqlmap2 = "{call returnmap2(?)}";
+    private static String sqlmap2 = "{call map2(?)}";
     
-    private static String sqlmap3 = "{call returnmap3(?)}";
+    private static String sqlmap3 = "{call map3(?)}";
     
-    private static String sqlmap4 = "{call returnmap4(?)}";
+    private static String sqlmap4 = "{call map4(?)}";
     
-    private static String sqlmap5 = "{call returnmap5(?)}";
+    private static String sqlmap5 = "{call map5(?)}";
 
 
     private static String sqldata = "{call returndata()}";
@@ -94,22 +94,29 @@ public class SaveMapDAO extends AbstractDAO {
 		        }
 		        return elementlist;
 		    }
-		    public int getElement(int row, int collumn){
-		    	final ArrayList<String> elementRow = new ArrayList<String>();
-		    	switch(elementRow) {
+		    public String getElement(int idmap, int row, int collumn) throws SQLException{
+		    	String element = "";
+		    	ArrayList<String> elementRow = new ArrayList<String>();
+		    	switch(idmap) {
 		    		    		
 		    	case 1:  
+                		elementRow = getMap1(row);
                 		break;
 		    	case 2: 
+		    			elementRow=getMap2(row);
 		    			break;
 		    	case 3:  
+		    			elementRow=getMap3(row);
 		    			break;
 		    	case 4:  
-                		break;
+		    			elementRow=getMap4(row);
+		    			break;
 		    	case 5:  
+		    			elementRow=getMap5(row);
 		    			break;
 		    	}
-		    	return;
+		     element = elementRow.get(collumn);
+		    	return element;
 		    }
 
 }
