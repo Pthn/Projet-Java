@@ -2,12 +2,13 @@ package model;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 
 public interface IBoulderdashModel {
 
 
-    Map getMApById(int id) throws SQLException;
+    Map getMapById(int id) throws SQLException;
 
 
     Map getMapByName(String name) throws SQLException;
@@ -17,4 +18,6 @@ public interface IBoulderdashModel {
     
     IMap getMap();
     IMobile getMyHero();
+
+
 }

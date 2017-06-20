@@ -18,10 +18,10 @@ import view.IView;
 public class ControllerFacade implements IBoulderdashController {
 
     /** The view. */
-    private final IView  view;
+    private final IBoulderdashView  view;
 
     /** The model. */
-    private final IModel model;
+    private final IBoulderdashModel model;
 
     /**
      * Instantiates a new controller facade.
@@ -44,9 +44,9 @@ public class ControllerFacade implements IBoulderdashController {
      *             the SQL exception
      */
     public void start() throws SQLException {
-        this.getView().displayMessage(this.getModel().getExampleById(1).toString());
+        this.getView().displayMessage(this.getModel().getMapById(1).toString());
 
-        this.getView().displayMessage(this.getModel().getExampleByName("Example 2").toString());
+        this.getView().displayMessage(this.getModel().getMapByName("Example 2").toString());
 
         final List<Example> examples = this.getModel().getAllExamples();
         final StringBuilder message = new StringBuilder();
@@ -63,7 +63,7 @@ public class ControllerFacade implements IBoulderdashController {
      *
      * @return the view
      */
-    public IView getView() {
+    public IBoulderdashView getView() {
         return this.view;
     }
 
@@ -72,7 +72,19 @@ public class ControllerFacade implements IBoulderdashController {
      *
      * @return the model
      */
-    public IModel getModel() {
+    public IBoulderdashModel getModel() {
         return this.model;
     }
+
+	@Override
+	public void play() throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public IOrderPerformer getOrderPerformer() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
