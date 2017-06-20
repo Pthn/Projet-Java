@@ -1,9 +1,7 @@
 package controller;
 
-import controller.IOrderPerformer;
-
 public interface IBoulderdashController{
 
-		public void play();
+		public void play() throws InterruptedException;
 		public IOrderPerformer getOrderPerformer();
 }

@@ -4,7 +4,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 import model.Example;
+import model.IBoulderdashModel;
 import model.IModel;
+import view.IBoulderdashView;
 import view.IView;
  
 /**
@@ -13,7 +15,7 @@ import view.IView;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public class ControllerFacade implements IController {
+public class ControllerFacade implements IBoulderdashController {
 
     /** The view. */
     private final IView  view;
@@ -29,7 +31,7 @@ public class ControllerFacade implements IController {
      * @param model
      *            the model
      */
-    public ControllerFacade(final IView view, final IModel model) {
+    public ControllerFacade(final IBoulderdashView view, final IBoulderdashModel model) {
         super();
         this.view = view;
         this.model = model;
