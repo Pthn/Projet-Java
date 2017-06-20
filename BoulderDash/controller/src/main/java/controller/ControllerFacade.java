@@ -5,14 +5,12 @@ import java.util.List;
 
 import model.Example;
 import model.IBoulderdashModel;
-import model.IModel;
 import view.IBoulderdashView;
-import view.IView;
  
 /**
  * <h1>The Class ControllerFacade provides a facade of the Controller component.</h1>
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
+ * 
  * @version 1.0
  */
 public class ControllerFacade implements IBoulderdashController {
@@ -23,7 +21,7 @@ public class ControllerFacade implements IBoulderdashController {
     /** The model. */
     private final IBoulderdashModel model;
 
-    /**
+    /** 
      * Instantiates a new controller facade.
      *
      * @param view
