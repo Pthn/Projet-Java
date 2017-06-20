@@ -6,7 +6,7 @@ import model.element.Sprite;
 
 public class BlockFond extends MotionlessElement{
 	
-	private static final Sprite SPRITE = new Sprite(')', "BlockFond.jpg");
+	private static final Sprite SPRITE = new Sprite('F', "BlockFond.jpg");
 
 	BlockFond() {
 		super(SPRITE, Permeability.PENETRABLE);

@@ -6,7 +6,7 @@ import model.element.Sprite;
 
 public class BlockRocher extends MotionlessElement{
 	
-	private static final Sprite SPRITE = new Sprite(')', "BlockRocher.jpg");
+	private static final Sprite SPRITE = new Sprite('R', "BlockRocher.jpg");
 
 	BlockRocher() {
 		super(SPRITE, Permeability.PENETRABLE);

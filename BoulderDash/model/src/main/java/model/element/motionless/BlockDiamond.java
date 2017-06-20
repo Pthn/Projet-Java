@@ -6,7 +6,7 @@ import model.element.Sprite;
 
 public class BlockDiamond extends MotionlessElement{
 	
-	private static final Sprite SPRITE = new Sprite(')', "BlockDiamond.jpg");
+	private static final Sprite SPRITE = new Sprite('D', "BlockDiamond.jpg");
 
 	BlockDiamond() {
 		super(SPRITE, Permeability.PENETRABLE);

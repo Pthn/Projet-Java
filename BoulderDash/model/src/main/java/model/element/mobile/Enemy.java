@@ -8,7 +8,7 @@ import model.element.Sprite;
 
 public class Enemy extends Mobile{
 	
-	 private static final Sprite spriteEnemy = new Sprite('H', "Enemy.png");
+	 private static final Sprite spriteEnemy = new Sprite('E', "Enemy.png");
 
 		public Enemy(final int x, final int y, IMap map) throws IOException {
 			 super(x, y, sprite, map, Permeability.BLOCKING);
@@ -18,9 +18,6 @@ public class Enemy extends Mobile{
         super.moveLeft();
         this.setSprite(spriteEnemy);
     }
-
-    
-    
 
     public final void moveRight() {
         super.moveRight();
@@ -39,4 +36,8 @@ public class Enemy extends Mobile{
 		 this.setSprite(spriteEnemy);
 		return null;
 	} 
+	
+	public static void enemyAutoMove(int x, int y, IMap map){
+		
+	}
 }
