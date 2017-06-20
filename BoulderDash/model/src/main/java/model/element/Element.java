@@ -11,7 +11,7 @@ public abstract class Element implements IElement{
     protected static Sprite sprite;
 
 
-    private Permeability permeability;
+    protected Permeability permeability;
 
 
     public Element(final Sprite sprite, final Permeability permeability) {

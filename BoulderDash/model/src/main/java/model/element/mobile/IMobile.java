@@ -11,7 +11,7 @@ public interface IMobile {
 		void doNothing();
 		int getX();
 		int getY();
-		public boolean getSprite();
+
 		public boolean isAlive();
 		public Point getPosition();
 

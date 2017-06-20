@@ -32,5 +32,12 @@ public class BoulderdashModel implements IBoulderdashModel {
 	
 	private void setMyHero(final MyHero myHero){
 		this.myHero = (IMobile) myHero;
+	}
+
+
+
+	public void getModel() {
+		
+		
 	} 
 }        

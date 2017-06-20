@@ -8,11 +8,12 @@ import model.element.Permeability;
 import model.element.Sprite;
 
 public abstract class Mobile  extends Element implements IMobile{
+	
 
-	private Point position;
-	private boolean alive = true;
-	private IMap map;
-
+	protected Point position;
+	protected boolean alive = true;
+	protected IMap map;
+	protected Sprite sprite;
 	
 	
 	Mobile(final Sprite sprite, final IMap map, final Permeability permeability){

@@ -16,7 +16,7 @@ import model.IMobile;
 
 
 
-public class BoulderdashView implements Runnable, KeyListener, IBoulderdashView, IElement
+public class BoulderdashView implements Runnable, KeyListener, IBoulderdashView
 {
 	private static int squareSize = 50;
 	public static int mapView = 10;

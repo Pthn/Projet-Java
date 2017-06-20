@@ -7,12 +7,12 @@ import model.element.Sprite;
 
 public class MyHero extends Mobile{
 	
-    private static final Sprite sprite          = new Sprite('H', "MyHero.png");
+    private static final Sprite sprite          = new Sprite('H', "hero_face");
 
-    private static final Sprite spriteTurnLeft  = new Sprite('H', "MyHeroLeft.png");
-    private static final Sprite spriteTurnRight = new Sprite('H', "MyHeroRight.png");
-    private static final Sprite spriteTurnUp = new Sprite('H', "MyHeroUp.png");
-    private static final Sprite spriteTurnDown = new Sprite('H', "MyHeroDown.png");
+    private static final Sprite spriteTurnLeft  = new Sprite('H', "hero_left");
+    private static final Sprite spriteTurnRight = new Sprite('H', "hero_right");
+    private static final Sprite spriteTurnUp = new Sprite('H', "hero_up");
+    private static final Sprite spriteTurnDown = new Sprite('H', "hero_down");
    
 	 public MyHero(final int x, final int y, final IMap map) throws IOException {
 	        super(x, y, sprite, map, Permeability.BLOCKING);
