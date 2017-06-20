@@ -9,9 +9,6 @@ import model.element.Sprite;
 
 public abstract class Mobile  extends Element implements IMobile{
 
-
-	
-
 	private Point position;
 	private boolean alive = true;
 	private IMap map;
