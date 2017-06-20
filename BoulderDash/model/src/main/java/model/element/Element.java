@@ -21,12 +21,12 @@ public abstract class Element implements IElement{
 
 
     public final Sprite getSprite() {
-        return this.sprite;
+        return Element.sprite;
     }
 
 
     protected void setSprite(final Sprite sprite) {
-        this.sprite = sprite;
+        Element.sprite = sprite;
     }
 
 

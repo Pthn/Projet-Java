@@ -17,7 +17,7 @@ public class Sprite {
 
 
     public Sprite(final char character) {
-        this(character, "noimage.jpg");
+        this(character, "hero.jpg");
     }
 
 

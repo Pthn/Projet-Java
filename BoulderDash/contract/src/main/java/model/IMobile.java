@@ -14,5 +14,6 @@ public interface IMobile {
 
 		public Boolean isAlive();
 		public Point getPosition();
+		void getSprite();
 
 }
