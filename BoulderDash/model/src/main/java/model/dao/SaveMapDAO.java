@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class SaveMapDAO extends AbstractDAO {
+public abstract class SaveMapDAO extends AbstractDAO {
 
 
     private static String sqlmap1  = "{call map1(?)}";
