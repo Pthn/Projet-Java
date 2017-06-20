@@ -20,7 +20,7 @@ public class Map extends Observable implements IMap{
 		this.loadFile(fileName);
 	}
 	
-	private void loadFile(String fileName) throws IOException{
+	private void loadFile(final String fileName) throws IOException{
 		final BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
         String line;
         int y = 0;

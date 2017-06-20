@@ -19,6 +19,8 @@ public class Enemy extends Mobile{
         this.setSprite(spriteEnemy);
     }
 
+    
+    
 
     public final void moveRight() {
         super.moveRight();

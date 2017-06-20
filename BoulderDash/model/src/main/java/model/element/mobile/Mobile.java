@@ -13,7 +13,7 @@ public abstract class Mobile  extends Element implements IMobile{
 	protected Point position;
 	protected boolean alive = true;
 	protected IMap map;
-	protected Sprite sprite;
+	protected static Sprite sprite;
 	
 	
 	Mobile(final Sprite sprite, final IMap map, final Permeability permeability){

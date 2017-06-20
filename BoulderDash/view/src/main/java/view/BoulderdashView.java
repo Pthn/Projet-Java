@@ -13,7 +13,7 @@ import controller.IOrderPerformer;
 import controller.UserOrder;
 import model.IMap;
 import model.IMobile;
-
+import model.IElement;
 
 
 public class BoulderdashView implements Runnable, KeyListener, IBoulderdashView
@@ -26,6 +26,7 @@ public class BoulderdashView implements Runnable, KeyListener, IBoulderdashView
 	private IMobile myHero;
 	private IOrderPerformer orderPerformer;
 	private IMobile enemy;
+	
 	
 	
 	
