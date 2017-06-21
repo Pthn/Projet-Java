@@ -3,50 +3,71 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.SQLException;
 import java.util.Observable;
-
+import model.dao.DataDAO;
+import model.dao.*;
 import model.element.IElement;
 import model.element.motionless.MotionlessElementsFactory;
 
 
 public class Map extends Observable implements IMap{
 	
-	private int width;
-	private int height;
-	private IElement[][] onTheMap;
 	
-	public Map(String fileName) throws IOException{
+
+	private IElement[][] onTheMap;
+	int height;
+	int width;
+	int diamond;
+	int idmap;
+	String[] elementlist;
+	int row;
+	int collumn;
+
+	public Map(String fileName, DataDAO datadao) throws IOException, SQLException{
 		super();
+	
+		
+		width = DataDAO.getWidth(idmap);
+		height = DataDAO.getHeight(idmap);
+		diamond = DataDAO.getDiamond(idmap);
+		elementlist = SaveMapDAO.getElement(idmap, row, collumn);
+		
 		this.loadFile(fileName);
+	}
+	public int getIdmap(int idmap){
+		switch(idmap){
+		
+		case 1 : 	
+				idmap=1;
+				break;
+		case 2 : 
+				idmap=2;
+				break;
+		case 3 : 
+				idmap=3;
+				break;
+		case 4 : 
+				idmap=4;
+				break;
+		case 5 : 
+				idmap=5;
+				break;
+		}
+		return idmap;
 	}
 	
 	private void loadFile(final String fileName) throws IOException{
-		final BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
-        String line;
-        int y = 0;
-        line = buffer.readLine();
-        this.setWidth(Integer.parseInt(line));
-        line = buffer.readLine();
-        this.setHeight(Integer.parseInt(line));
-        this.onTheMap = new IElement[this.getWidth()][this.getHeight()];
-        line = buffer.readLine();
-        while (line != null) {
-            for (int x = 0; x < line.toCharArray().length; x++) {
-                this.setOnTheMapXY(MotionlessElementsFactory.getFromFileSymbol(line.toCharArray()[x]), x, y);
-            }
-            line = buffer.readLine();
-            y++;
-        }
-        buffer.close();
+		
+	    elementlist[];
+		for(int i = 0 ; i < rangMax ; i++) // Tu crées en boucle des ArrayList<Noeud>
+		    listeNoeud[i] = new ArrayList<Noeud>();
+		 
+		listeNoeud[0].add(unNoeud); // Et ici tu ajoutes tous les éléments
+
 	}
 	
-	public int getWidth(){
-		return this.width;
-	}
-	
-	public int getHeight(){
-		return this.height;
-	}
+
 	
 	public IElement getOnTheMapXY(final int x, final int y){
 		return this.onTheMap[x][y];
@@ -56,13 +77,7 @@ public class Map extends Observable implements IMap{
 		return this;
 	}
 	
-	private void setHeight(int height){
-		return;
-	}
-	
-	private void setWidth(int width){
-		return;
-	}
+
 	
 	private void setOnTheMapXY(final IElement element, final int x, final int y){
 		this.onTheMap[x][y] = element;

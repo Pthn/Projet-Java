@@ -1,7 +1,7 @@
 package model.element.mobile;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+
 
 import org.junit.After;
 import org.junit.AfterClass;

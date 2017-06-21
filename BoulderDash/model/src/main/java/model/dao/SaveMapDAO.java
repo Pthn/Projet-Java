@@ -10,7 +10,6 @@ public abstract class SaveMapDAO extends AbstractDAO {
 
     private static String sqlmap1  = "{call map1(?)}";
 
-
     private static String sqlmap2 = "{call map2(?)}";
     
     private static String sqlmap3 = "{call map3(?)}";
@@ -20,7 +19,7 @@ public abstract class SaveMapDAO extends AbstractDAO {
     private static String sqlmap5 = "{call map5(?)}";
 
 
-    private static String sqldata = "{call returndata()}";
+
 
 
    
@@ -94,7 +93,7 @@ public abstract class SaveMapDAO extends AbstractDAO {
 		        }
 		        return elementlist;
 		    }
-		    public String getElement(int idmap, int row, int collumn) throws SQLException{
+		    public static String[] getElement(int idmap, int row, int collumn) throws SQLException{
 		    	String element = "";
 		    	ArrayList<String> elementRow = new ArrayList<String>();
 		    	switch(idmap) {
