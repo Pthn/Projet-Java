@@ -1,6 +1,5 @@
 package model.element;
 
-import java.awt.Image;
 
 
 public abstract class Element implements IElement{
@@ -20,7 +19,8 @@ public abstract class Element implements IElement{
     }
 
 // get the sprite of the element
-    public final String getSprite() {
+    public String getSprite() {
+    	
         return this.sprite;
     }
 

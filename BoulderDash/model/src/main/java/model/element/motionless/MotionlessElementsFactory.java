@@ -20,6 +20,7 @@ public abstract class MotionlessElementsFactory {
 	        blockDiamond,
 	        blockRocher};
 	
+	
 	//creation of the motionless element
 	public static MotionlessElement createBlockFond(){
 		return blockFond;
@@ -50,15 +51,15 @@ public abstract class MotionlessElementsFactory {
 //        }
 //		return void;
 //
-// 
+//  
 //} 
-    public static MotionlessElement getFromSymbol(String fileSymbol) {
-
+    public static MotionlessElement getFromSymbol(String fileSymbol, Element element) {
+    	
         for (final MotionlessElement MotionlessElement : motionlessElements) {
-            if (Element.getSprite() == (fileSymbol+".png")) {
+            if (element.getSprite() == (fileSymbol+".png")) {
                  return MotionlessElement;
             }
-        }  
+        }   
         return null ;//
 
     }

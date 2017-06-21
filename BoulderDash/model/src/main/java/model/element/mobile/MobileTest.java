@@ -23,7 +23,7 @@ public class MobileTest {
 
 	    @Before
 	    public void setUp() throws Exception {
-	       Map map = new Map("MyHero.png");
+	      // Map map = new Map("MyHero.png");
 	    }
 
 	    @After
