@@ -55,7 +55,7 @@ public class Map extends Observable implements IMap{
 				break;
 		}
 		return idmap;
-	}
+	} 
 	
 	private void loadFile(final String fileName) throws IOException{
 		

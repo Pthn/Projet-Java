@@ -93,7 +93,7 @@ public abstract class SaveMapDAO extends AbstractDAO {
 		        }
 		        return elementlist;
 		    }
-		    public static String[] getElement(int idmap, int row, int collumn) throws SQLException{
+		    public static String getElement(int idmap, int row, int collumn) throws SQLException{
 		    	String element = "";
 		    	ArrayList<String> elementRow = new ArrayList<String>();
 		    	switch(idmap) {

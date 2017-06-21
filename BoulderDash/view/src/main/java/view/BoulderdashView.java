@@ -27,7 +27,7 @@ public class BoulderdashView implements Runnable, KeyListener, IBoulderdashView 
 	private IMobile enemy;
 	
 	
-	
+	 
 	
 	
 		public BoulderdashView(final IMap map, final IMobile myHero){

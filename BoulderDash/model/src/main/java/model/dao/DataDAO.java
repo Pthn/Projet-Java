@@ -27,7 +27,7 @@ public abstract class DataDAO extends AbstractDAO{
 	            	}
 	            result.close();
 	        }
-	       
+	        
 	       return height;
 	    }
 	public static int getWidth(int idmap) throws SQLException {
