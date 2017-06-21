@@ -4,9 +4,13 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import controller.BoulderdashController;
+import controller.IBoulderdashController;
 import model.BoulderdashModel;
 import model.IBoulderdashModel;
+import model.IMobile;
+import model.dao.DataDAO;
 import view.BoulderdashView;
+import view.IBoulderdashView;
 
 public abstract class Main {
 
@@ -20,18 +24,31 @@ public abstract class Main {
 //            exception.printStackTrace();
 //        }
 //    }
-    private static String map;
+    /** The Constant startX. */
+    private static final int startX = 5;
 
-	public static void main(final String[] args) throws IOException, InterruptedException {
-        final BoulderdashModel model = new BoulderdashModel(map, 0, 0, null, null);
-        final BoulderdashView view = new BoulderdashView(model.getMap(), model.getMyHero());
-        final IBouldedashController controller = new BoulderdashController(view, model);
-        view.setOrderPerformer(controller.getOrderPeformer());
-        try {
-        	  controller.play();
-        }
+    /** The Constant startY. */
+    private static final int startY = 0;
+
+
+
+	public static void main(final String[] args) throws IOException, InterruptedException, SQLException {
+		DataDAO datadao = null;
+        final IBoulderdashModel model = new BoulderdashModel(0, 0, datadao, null);
+        final IBoulderdashView view = new BoulderdashView(model.getMap(), (IMobile) model.getMyHero());
+        final IBoulderdashController controller = new BoulderdashController(view,model);
+      view.setOrderPerformer(controller.getOrderPerformer());
+      controller.play();
+	}
+		
+	
+
+        	
+//       view.setOrderPerformer(controller.getOrderPerformer());
+//       
+//       view.setOrderPerformer(controller.getOrderPeformer());
+//       controller.play();
+//     
+        	
+	}
       
-        catch (final SQLException exception) {
-            exception.printStackTrace();
-        }
-}

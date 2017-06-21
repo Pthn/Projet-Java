@@ -15,8 +15,8 @@ public class BoulderdashModel implements IBoulderdashModel {
     private IMobile myHero;
 
    
-	public BoulderdashModel(final String fileName, final int myHeroStartX, final int myHeroStartY, final DataDAO datadao, IMap map) throws IOException, SQLException{	
-		this.setMap(new Map(fileName, datadao));
+	public BoulderdashModel(final int myHeroStartX, final int myHeroStartY, final DataDAO datadao, IMap map) throws IOException, SQLException{	
+		this.setMap(new Map(null, datadao));
         this.setMyHero(new MyHero(myHeroStartX, myHeroStartY, this.getMap()));
 	}
 	// set and get the map, mobile element and model

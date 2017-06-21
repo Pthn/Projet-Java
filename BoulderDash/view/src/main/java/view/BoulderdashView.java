@@ -1,23 +1,21 @@
 package view;
 
-import java.awt.Graphics;
-import java.awt.Image;
+
+import java.awt.LayoutManager;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
-import java.io.File;
 import java.io.IOException;
-
-import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 import controller.IOrderPerformer;
 import controller.UserOrder;
 import model.IMap;
 import model.IMobile;
 
-public class BoulderdashView<IElement> extends JFrame implements IBoulderdashView{
+public class BoulderdashView extends JFrame implements IBoulderdashView{
 
 	private static final long serialVersionUID = 1L;
 	private static int squareSize = 50;
@@ -28,45 +26,47 @@ public class BoulderdashView<IElement> extends JFrame implements IBoulderdashVie
 	private IMobile myHero;
 	private IOrderPerformer orderPerformer;
 	private IMobile enemy;
-	private IElement[][] onTheMap;
+
 		
 		public BoulderdashView(final IMap map, final IMobile myHero){
-			 this.setTitle("Boulder Dash");
+				
+				this.setView(mapView);
+				this.setMap(map);
+				this.setMyHero(myHero);
+				this.getMyHero().getSprite();
+				this.setCloseView(new Rectangle(0, this.getMyHero().getY(), this.getMap().getWidth(), mapView));
+			
+				this.setTitle("Boulder Dash");
 		        
 		        this.setSize(getWidth(), getHeight());
 		        this.setLocationRelativeTo(null);
-		        JPanel pan = new JPanel();
-		        pan.
+		        JPanel pan = new JPanel((LayoutManager) map);
+		        this.setContentPane(pan);
 		        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		        this.setVisible(true);
 		        this.setResizable(false);
 
-		        this.setContentPane(new pan);
+		        this.setContentPane(pan);
+		        
 		        this.setVisible(true);
 		}
-//		{}
-//			
-//			  this.setView(mapView);
-//		        this.setMap(map);
-//		        this.setMyHero(myHero);
-//		        this.getMyHero().getSprite();
-//		  
-//		        this.setCloseView(new Rectangle(0, this.getMyHero().getY(), this.getMap().getWidth(), mapView));
+
+		     
 //		        SwingUtilities.invokeLater(this);
 //		}
-		 public IMap displayMap(Graphics g)
-		  {
-		
-		    try
-		    {
-		      map mapdisplay = new map();
-		      //Pour une image de fond
-		      //g.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);
-		    } catch (IOException e)
-		    {
-		      e.printStackTrace();
-		    }
-		  }
+//		 public IMap displayMap(Graphics g)
+//		  {
+//		
+//		    try
+//		    {
+//		      map mapdisplay = new map();
+//		      //Pour une image de fond
+//		      //g.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);
+//		    } catch (IOException e)
+//		    {
+//		      e.printStackTrace();
+//		    }
+//		  }
 		
 		public void displayMessage(final String message){
 	        JOptionPane.showMessageDialog(null, message);
