@@ -7,12 +7,15 @@ import view.IBoulderdashView;
 
 public class BoulderdashController implements IBoulderdashController, IOrderPerformer {
 	
+	// Initialization //
+	
 	private static final int speed = 300;
 	
 	private IBoulderdashView view;
 	private IBoulderdashModel model;
 	private UserOrder stackOrder;
 
+	// Implementation of the controller //
 	
 	public BoulderdashController(final IBoulderdashView view, final IBoulderdashModel model){
 		this.setView(view);
@@ -20,6 +23,8 @@ public class BoulderdashController implements IBoulderdashController, IOrderPerf
 		this.clearStackOrder();
 		
 	}
+	
+	// Main method of Management //
 	
 	public final void play() throws InterruptedException {
 		while(this.getModel().getMyHero().isAlive()) {
@@ -52,10 +57,13 @@ public class BoulderdashController implements IBoulderdashController, IOrderPerf
 		this.getView().displayMessage("You lose");
 	}
 	
+	
+	
 	public final void orderPerform(final UserOrder userOrder) throws IOException {
  		this.setStackOrder(userOrder);
 	}
 	
+	// Get the view //
 	
 	private IBoulderdashView getView(){
 		return this.view;
@@ -65,6 +73,8 @@ public class BoulderdashController implements IBoulderdashController, IOrderPerf
 		this.view = view;
 	}
 	
+	// Get the model //
+	
 	private IBoulderdashModel getModel() {
 		return this.model;
 	}
@@ -72,6 +82,8 @@ public class BoulderdashController implements IBoulderdashController, IOrderPerf
 	private void setModel(final IBoulderdashModel model) {
 		this.model = model;
 	}
+	
+	// Stack Order commands //
 	
 	private UserOrder getStackOrder() {
 		return this.stackOrder;

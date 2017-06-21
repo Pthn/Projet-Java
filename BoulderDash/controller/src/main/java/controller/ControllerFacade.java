@@ -48,7 +48,7 @@ public class ControllerFacade implements IBoulderdashController {
 
         final List<Example> examples = this.getModel().getAllExamples();
         final StringBuilder message = new StringBuilder();
-        // a.append(" bar);
+        // a.append(" bar); 
         for (final Example example : examples) {
             message.append(example);
             message.append('\n');
