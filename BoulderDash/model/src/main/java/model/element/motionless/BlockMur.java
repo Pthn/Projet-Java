@@ -7,7 +7,8 @@ import model.element.Sprite;
 public class BlockMur extends MotionlessElement{
 	
 	private static final Sprite SPRITE = new Sprite('M', "BlockMur.jpg");
-
+	// set the permeability and the sprite to block Mur
+	
 	BlockMur() {
 		super(SPRITE, Permeability.BLOCKING);
 	}

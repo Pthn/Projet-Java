@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public abstract class SaveMapDAO extends AbstractDAO {
 
 
+	// the sql map 
     private static String sqlmap1  = "{call map1(?)}";
 
     private static String sqlmap2 = "{call map2(?)}";
@@ -22,7 +23,7 @@ public abstract class SaveMapDAO extends AbstractDAO {
 
 
 
-   
+   //GET the map1
 		    public static ArrayList<String> getMap1(int row) throws SQLException {
 		        final ArrayList<String> elementlist = new ArrayList<String>();
 		        final CallableStatement callStatement = prepareCall(sqlmap1);
@@ -37,6 +38,7 @@ public abstract class SaveMapDAO extends AbstractDAO {
 		        }
 		        return elementlist;
 		    }
+		    //GET the map2
 		    public static ArrayList<String> getMap2(int row) throws SQLException {
 		        final ArrayList<String> elementlist = new ArrayList<String>();
 		        final CallableStatement callStatement = prepareCall(sqlmap2);
@@ -51,6 +53,7 @@ public abstract class SaveMapDAO extends AbstractDAO {
 		        }
 		        return elementlist;
 		    }
+		    //GET the map3
 		    public static ArrayList<String> getMap3(int row) throws SQLException {
 		        final ArrayList<String> elementlist = new ArrayList<String>();
 		        final CallableStatement callStatement = prepareCall(sqlmap3);
@@ -65,6 +68,7 @@ public abstract class SaveMapDAO extends AbstractDAO {
 		        }
 		        return elementlist;
 		    }
+		    //GET the map4
 		    public static ArrayList<String> getMap4(int row) throws SQLException {
 		        final ArrayList<String> elementlist = new ArrayList<String>();
 		        final CallableStatement callStatement = prepareCall(sqlmap4);
@@ -79,6 +83,7 @@ public abstract class SaveMapDAO extends AbstractDAO {
 		        }
 		        return elementlist;
 		    }
+		    //GET the map5
 		    public static ArrayList<String> getMap5(int row) throws SQLException {
 		        final ArrayList<String> elementlist = new ArrayList<String>();
 		        final CallableStatement callStatement = prepareCall(sqlmap5);
@@ -93,6 +98,7 @@ public abstract class SaveMapDAO extends AbstractDAO {
 		        }
 		        return elementlist;
 		    }
+		    //GET the element of the maps
 		    public static String getElement(int idmap, int row, int collumn) throws SQLException{
 		    	String element = "";
 		    	ArrayList<String> elementRow = new ArrayList<String>();

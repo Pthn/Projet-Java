@@ -15,21 +15,21 @@ public class Sprite {
         this.setImageName(imageName);
     }
 
-
+		//set a sprite to a character
     public Sprite(final char character) {
         this(character, "hero.jpg");
     }
 
-
+    	
     public final Image getImage() {
         return this.image;
     }
-
+    	//Load the file picture in order to the image Name
     public final void loadImage() throws IOException {
         this.setImage(ImageIO.read(new File("images/" + this.getImageName())));
     }
 
-
+    	
     public final char getConsoleImage() {
         return this.consoleImage;
     }

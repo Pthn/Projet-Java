@@ -19,7 +19,7 @@ public abstract class Element implements IElement{
         this.setPermeability(permeability);
     }
 
-//jtm piere l'insupportable
+// get the sprite of the element
     public final Sprite getSprite() {
         return Element.sprite;
     }
@@ -29,7 +29,7 @@ public abstract class Element implements IElement{
         Element.sprite = sprite;
     }
 
-
+// get the permeability of the element 
     public final Permeability getPermeability() {
         return this.permeability;
     }

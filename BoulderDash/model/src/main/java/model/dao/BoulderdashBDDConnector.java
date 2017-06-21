@@ -12,7 +12,7 @@ final class BoulderDashBDDConnector {
     
     private static BoulderDashBDDConnector instance;
 
-   
+   // Set the login and link of the DB
     private static String                  user     = "root";
 
  
@@ -32,7 +32,8 @@ final class BoulderDashBDDConnector {
         this.open();
     }
 
- 
+ //Design matern singleton to return a instance of the connector
+    
     public static BoulderDashBDDConnector getInstance() {
         if (instance == null) {
             setInstance(new BoulderDashBDDConnector());
@@ -45,7 +46,7 @@ final class BoulderDashBDDConnector {
         BoulderDashBDDConnector.instance = instance;
     }
 
-
+//Open the connection
     private boolean open() {
         try {
             this.connection = DriverManager.getConnection(BoulderDashBDDConnector.url, BoulderDashBDDConnector.user,
@@ -58,7 +59,7 @@ final class BoulderDashBDDConnector {
         return false;
     }
 
-  
+  //get the statement ( sql request)
     public ResultSet executeQuery(final String query) {
         try {
             return this.getStatement().executeQuery(query);
