@@ -1,11 +1,11 @@
 package model.element.mobile;
 import java.awt.Point;
-
+ 
 import model.IMap;
 import model.IMobile;
 import model.element.Element;
 import model.element.Permeability;
-import model.element.Sprite;
+
 
 public abstract class Mobile  extends Element implements IMobile{
 	
@@ -14,16 +14,16 @@ public abstract class Mobile  extends Element implements IMobile{
 	protected Point position;
 	protected boolean alive = true;
 	protected IMap map;
-	protected static Sprite sprite;
+	 static String sprite;
 	
 	// Implementation of methods concerning mobile elements //
 	
-	Mobile(final Sprite sprite, final IMap map, final Permeability permeability){
+	Mobile(final String sprite, final IMap map, final Permeability permeability){
         super(sprite, permeability);
         this.setMap(map);
         this.position = new Point();
 	}
-    Mobile(final int x, final int y, final Sprite sprite, final IMap map, final Permeability permeability) {
+    Mobile(final int x, final int y, final String sprite, final IMap map, final Permeability permeability) {
         this(sprite, map, permeability);
         this.setX(x);
         this.setY(y);
@@ -67,7 +67,7 @@ public abstract class Mobile  extends Element implements IMobile{
 	}
 	
     public final void setX(final int x) {
-        this.getPosition().x = x;
+        this.getPosition().x = (x + this.getMap().getWidth()) % this.getMap().getWidth();
        
         }
 	

@@ -8,25 +8,25 @@ public abstract class Element implements IElement{
 
 
 	
-    protected static Sprite sprite;
+    String sprite;
 
 
     protected Permeability permeability;
 
 
-    public Element(final Sprite sprite, final Permeability permeability) {
+    public Element(String sprite, final Permeability permeability) {
         this.setSprite(sprite);
         this.setPermeability(permeability);
     }
 
 // get the sprite of the element
-    public final Sprite getSprite() {
-        return Element.sprite;
+    public final String getSprite() {
+        return this.sprite;
     }
 
 
-    protected void setSprite(final Sprite sprite) {
-        Element.sprite = sprite;
+    protected void setSprite(final String sprite) {
+        this.sprite = sprite;
     }
 
 // get the permeability of the element 
@@ -39,11 +39,11 @@ public abstract class Element implements IElement{
         this.permeability = permeability;
     }
 
-
-
-    public final Image getImage() {
-        return this.getSprite().getImage();
-    }
 }
+
+//    public final Image getImage() {
+//        return this.getSprite().getImage();
+//    }
+//}
 
 

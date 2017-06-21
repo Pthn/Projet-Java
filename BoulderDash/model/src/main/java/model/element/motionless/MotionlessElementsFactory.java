@@ -1,5 +1,7 @@
 package model.element.motionless;
 
+import model.element.Element;
+
 public abstract class MotionlessElementsFactory {
 	
 	// instantiation of the motionless element
@@ -40,12 +42,24 @@ public abstract class MotionlessElementsFactory {
 	}
 	
  //Get the sprite of the element
-	public static MotionlessElement getFromFileSymbol(final char fileSymbol) {
-        for (final MotionlessElement motionlessElement : motionlessElements) {
-            if (motionlessElement.getSprite().getConsoleImage() == fileSymbol) {
-                return motionlessElement;
+//    public static MotionlessElement getFromSymbol(String fileSymbol) {
+//        for (final MotionlessElement motionlessElement : motionlessElements) {
+//            if (motionlessElement.getSprite() == (fileSymbol+".png")) {
+//                return motionlessElement;
+//            }
+//        }
+//		return void;
+//
+// 
+//} 
+    public static MotionlessElement getFromSymbol(String fileSymbol) {
+
+        for (final MotionlessElement MotionlessElement : motionlessElements) {
+            if (Element.getSprite() == (fileSymbol+".png")) {
+                 return MotionlessElement;
             }
-        }
-        return null ;
+        }  
+        return null ;//
+
     }
-} 
+}

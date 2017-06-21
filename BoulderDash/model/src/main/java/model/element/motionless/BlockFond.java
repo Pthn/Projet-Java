@@ -2,11 +2,11 @@ package model.element.motionless;
 
 import  model.element.motionless.MotionlessElement;
 import model.element.Permeability;
-import model.element.Sprite;
+
 
 public class BlockFond extends MotionlessElement{
 	
-	private static final Sprite SPRITE = new Sprite('F', "BlockFond.jpg");
+	private static final String SPRITE = "BlockFond.jpg";
 	// set the permeability and the sprite to block fond
 	
 	BlockFond() {

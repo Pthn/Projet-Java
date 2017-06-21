@@ -3,30 +3,27 @@ import java.io.IOException;
 
 import model.IMap;
 import model.element.Permeability;
-import model.element.Sprite;
+
 
 public class MyHero extends Mobile{
 	
 	// Definition of the Sprites according to the displacements //
 	
-    private static final Sprite sprite          = new Sprite('H', "hero_face");
+    private static final String sprite          = "hero_face";
 
-    private static final Sprite spriteTurnLeft  = new Sprite('H', "hero_left");
+    private static final String spriteTurnLeft  = "hero_left";
     
-    private static final Sprite spriteTurnRight = new Sprite('H', "hero_right");
+    private static final String spriteTurnRight = "hero_right";
     
-    private static final Sprite spriteTurnUp = new Sprite('H', "hero_up");
+    private static final String spriteTurnUp = "hero_up";
     
-    private static final Sprite spriteTurnDown = new Sprite('H', "hero_down");
+    private static final String spriteTurnDown = "hero_down";
    
     // Creation from Hero Method //
     
 	 public MyHero(final int x, final int y, final IMap map) throws IOException {
 	        super(x, y, sprite, map, Permeability.BLOCKING);
-	        spriteTurnLeft.loadImage();
-	        spriteTurnRight.loadImage();
-	        spriteTurnDown.loadImage();
-	        spriteTurnUp.loadImage();
+
 	    }
  
 	// Method for managing displacements or action //

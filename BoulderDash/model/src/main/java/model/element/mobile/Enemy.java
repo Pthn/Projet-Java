@@ -4,19 +4,19 @@ import java.io.IOException;
 
 import model.IMap;
 import model.element.Permeability;
-import model.element.Sprite;
+
 
 public class Enemy extends Mobile{
 	
 	// Creation from Enemy Sprite //
 	
-	 private static final Sprite spriteEnemy = new Sprite('E', "Enemy.png");
+	 private static final String spriteEnemy = "Enemy.png";
 
 	 // Implementation from Enemy //
 	 
 		public Enemy(final int x, final int y, IMap map) throws IOException {
 			 super(x, y, sprite, map, Permeability.BLOCKING);
-		        spriteEnemy.loadImage();
+		 
 		}
 		
 		// Method of enemy movements //

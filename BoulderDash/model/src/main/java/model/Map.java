@@ -1,13 +1,12 @@
 package model;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Observable;
 
 import model.dao.DataDAO;
 import model.dao.SaveMapDAO;
 import model.element.IElement;
+import model.element.motionless.MotionlessElementsFactory;
 
 
 public class Map extends Observable implements IMap{
@@ -32,7 +31,7 @@ public class Map extends Observable implements IMap{
 		diamond = DataDAO.getDiamond(idmap);
 		elementlist =  SaveMapDAO.getElement(idmap, row, collumn);
 		
-		this.loadFile(fileName);
+		this.loadMap();
 	}
 //	public int getIdmap(int idmap){
 //		switch(idmap){
@@ -56,14 +55,38 @@ public class Map extends Observable implements IMap{
 //		return idmap;
 //	} 
 	
-	private void loadFile(final String fileName) throws IOException{
+	private void loadMap() throws IOException, SQLException{
 		
-		String tab
+		int x;
+		int y;
+		for(y = 0; y < height ; y++){
+		
+			for(x = 0; x < width ; x++){
+				this.setOnTheMapXY(MotionlessElementsFactory.getFromSymbol(SaveMapDAO.getElement(y, x, y)), x, y);
+			}
+			
+		}
 	    
 	
 	}
 // get a map of an element double table
 	
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
 	public IElement getOnTheMapXY(final int x, final int y){
 		return this.onTheMap[x][y];
 	}
@@ -86,6 +109,8 @@ public class Map extends Observable implements IMap{
 	public void getSprite(){
 		return;
 	}
+
+
 	
 	
 	

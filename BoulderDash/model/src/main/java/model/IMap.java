@@ -10,6 +10,9 @@ public interface IMap {
 	public IElement getOnTheMapXY(int x, int y);
 	public void setMobileHasChanged();
 	public Observable getObservable();
-	public int getIdmap(int idmap);
+	public int getHeight();
+	public int getWidth();
+
+
 	
 }
