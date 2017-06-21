@@ -141,7 +141,7 @@ public class BoulderdashView implements Runnable, KeyListener, IBoulderdashView 
 			}
 			public void setMyHero(final IMobile myHero)
 			{
-				this.myHero = myHero;
+				this.myHero = myHero
 			}
 			
 			public int getView()
