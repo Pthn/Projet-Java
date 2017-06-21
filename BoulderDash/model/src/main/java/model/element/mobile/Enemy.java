@@ -37,7 +37,5 @@ public class Enemy extends Mobile{
 		return null;
 	} 
 	
-	public static void enemyAutoMove(int x, int y, IMap map){
-		
-	}
+	
 }
