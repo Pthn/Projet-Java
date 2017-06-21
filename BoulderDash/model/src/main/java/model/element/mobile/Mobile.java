@@ -9,12 +9,14 @@ import model.element.Sprite;
 
 public abstract class Mobile  extends Element implements IMobile{
 	
+	// Declaration of the elements //
 
 	protected Point position;
 	protected boolean alive = true;
 	protected IMap map;
 	protected static Sprite sprite;
 	
+	// Implementation of methods concerning mobile elements //
 	
 	Mobile(final Sprite sprite, final IMap map, final Permeability permeability){
         super(sprite, permeability);
@@ -26,7 +28,8 @@ public abstract class Mobile  extends Element implements IMobile{
         this.setX(x);
         this.setY(y);
     }
-
+    
+    // Methods of moving movements of moving elements in the table //
 	
 	public void moveUp(){
         this.setY(this.getY() - 1);
@@ -57,6 +60,8 @@ public abstract class Mobile  extends Element implements IMobile{
 		this.getMap().setMobileHasChanged();
 	}
 	
+	// Methods of positioning //
+	
 	public int getX(){
 		return this.getPosition().x;
 	}
@@ -74,6 +79,8 @@ public abstract class Mobile  extends Element implements IMobile{
         this.getPosition().y = (y + this.getMap().getHeight()) % this.getMap().getHeight();
 
     }
+    
+    // Method of use of the map //
 	
 	public IMap getMap(){
 		return this.map;
@@ -83,20 +90,30 @@ public abstract class Mobile  extends Element implements IMobile{
 		this.map = map;
 	}
 	
+	// Statement of a state //
+	
 	public Boolean isAlive(){
 		return this.alive;
 	}
 
+	// Method for turning element back to static state //
+	
     public Boolean changeToStatic() {
         return this.getMap().getOnTheMapXY(this.getX(), this.getY()).getPermeability() == Permeability.BLOCKING;
     }
 	 
+    // Positioning method //
+    
 	public Point getPosition(){
 		return this.position;
 	}
 	
 	public void setPosition(final Point position){
 		this.position = position;
+	}
+	public void doBreak() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	

@@ -8,12 +8,19 @@ import model.element.Sprite;
 
 public class Enemy extends Mobile{
 	
+	// Creation from Enemy Sprite //
+	
 	 private static final Sprite spriteEnemy = new Sprite('E', "Enemy.png");
 
+	 // Implementation from Enemy //
+	 
 		public Enemy(final int x, final int y, IMap map) throws IOException {
 			 super(x, y, sprite, map, Permeability.BLOCKING);
 		        spriteEnemy.loadImage();
 		}
+		
+		// Method of enemy movements //
+		
     public final void moveLeft() {
         super.moveLeft();
         this.setSprite(spriteEnemy);
@@ -31,6 +38,9 @@ public class Enemy extends Mobile{
         super.moveDown();
         this.setSprite(spriteEnemy);
     }
+    
+    // Method for turning diamond back to static state //
+    
 	public final Boolean changeToStatic(){
 		 super.changeToStatic();
 		 this.setSprite(spriteEnemy);
