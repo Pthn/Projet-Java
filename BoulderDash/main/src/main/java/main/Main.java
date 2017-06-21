@@ -1,10 +1,12 @@
 package main;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
-import controller.ControllerFacade;
-import model.ModelFacade;
-import view.ViewFacade;
+import controller.BoulderdashController;
+import model.BoulderdashModel;
+import model.IBoulderdashModel;
+import view.BoulderdashView;
 
 public abstract class Main {
 
@@ -18,8 +20,10 @@ public abstract class Main {
 //            exception.printStackTrace();
 //        }
 //    }
-    public static void main(final String[] args) throws IOException, InterruptedException {
-        final IBoulderdashModel model = new BoulderdashModel(map, startX, startY);
+    private static String map;
+
+	public static void main(final String[] args) throws IOException, InterruptedException {
+        final BoulderdashModel model = new BoulderdashModel(map, 0, 0, null, null);
         final BoulderdashView view = new BoulderdashView(model.getMap(), model.getMyHero());
         final IBouldedashController controller = new BoulderdashController(view, model);
         view.setOrderPerformer(controller.getOrderPeformer());

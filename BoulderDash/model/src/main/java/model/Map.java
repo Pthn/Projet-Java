@@ -62,7 +62,7 @@ public class Map extends Observable implements IMap{
 		for(y = 0; y < height ; y++){
 		
 			for(x = 0; x < width ; x++){
-				this.setOnTheMapXY(MotionlessElementsFactory.getFromSymbol(SaveMapDAO.getElement(y, x, y)), x, y);
+				this.setOnTheMapXY(MotionlessElementsFactory.getFromSymbol(SaveMapDAO.getElement(y, x, y), null), x, y);
 			}
 			
 		}
@@ -109,7 +109,7 @@ public class Map extends Observable implements IMap{
 	public void getSprite(){
 		return;
 	}
-
+	
 
 	
 	

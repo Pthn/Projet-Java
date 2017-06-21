@@ -13,9 +13,9 @@ import controller.IOrderPerformer;
 import controller.UserOrder;
 import model.IMap;
 import model.IMobile;
+import javax.swing.JFrame;
 
-
-public class BoulderdashView implements Runnable, KeyListener, IBoulderdashView {
+public class BoulderdashView extends JFrame implements KeyListener, IBoulderdashView {
 	
 	private static int squareSize = 50;
 	public static int mapView = 10;
@@ -25,61 +25,75 @@ public class BoulderdashView implements Runnable, KeyListener, IBoulderdashView 
 	private IMobile myHero;
 	private IOrderPerformer orderPerformer;
 	private IMobile enemy;
-	
-	
-	 
-	
-	
+		
 		public BoulderdashView(final IMap map, final IMobile myHero){
-			
-			  this.setView(mapView);
-		        this.setMap(map);
-		        this.setMyHero(myHero);
-		        this.getMyHero().getSprite().loadImage();
-		  
-		        this.setCloseView(new Rectangle(0, this.getMyHero().getY(), this.getMap().getWidth(), mapView));
-		        SwingUtilities.invokeLater(this);
+			 this.setTitle("Boulder Dash");
+		        
+		        this.setSize(getWidth(), getHeight());
+		        this.setLocationRelativeTo(null);
+		        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		        this.setVisible(true);
+		        this.setResizable(false);
+		        this.setContentPane(new Map());
+		        this.setVisible(true);
 		}
+//		{}
+//			
+//			  this.setView(mapView);
+//		        this.setMap(map);
+//		        this.setMyHero(myHero);
+//		        this.getMyHero().getSprite();
+//		  
+//		        this.setCloseView(new Rectangle(0, this.getMyHero().getY(), this.getMap().getWidth(), mapView));
+//		        SwingUtilities.invokeLater(this);
+//		}
+		
+		
+		
+		
+		
 		public void displayMessage(final String message){
 	        JOptionPane.showMessageDialog(null, message);
 			
 		}
-		public void run(){
-			final BoardFrame boardFrame = new BoardFrame("Close view");
-	        boardFrame.setDimension(new Dimension(this.getMap().getWidth(), this.getMap().getHeight()));
-	        boardFrame.setDisplayFrame(this.closeView);
-	        boardFrame.setSize(this.closeView.width * squareSize, this.closeView.height * squareSize);
-	        boardFrame.setHeightLooped(true);
-	        boardFrame.addKeyListener(this);
-	        boardFrame.setFocusable(true);
-	        boardFrame.setFocusTraversalKeysEnabled(false);
-	        for (int x = 0; x < this.getMap().getWidth(); x++) {
-	            for (int y = 0; y < this.getMap().getHeight(); y++) {
-	                boardFrame.addSquare(this.map.getOnTheMapXY(x, y), x, y);
-	            }
-	        }
-	        boardFrame.addPawn(this.getMyHero());
+		
 
-	        this.getMap().getObservable().addObserver(boardFrame.getObserver());
-	        this.followMyHero();
 
-	        boardFrame.setVisible(true);
-		}
-		public void show(int yStart){
-		     int y = yStart % this.getMap().getHeight();
-		        for (int view = 0; view < this.getView(); view++) {
-		            for (int x = 0; x < this.getMap().getWidth(); x++) {
-		                if ((x == this.getMyHero().getX()) && (y == yStart)) {
-		                    System.out.print(this.getMyHero().getSprite().getConsoleImage());
-		                } else {
-		                    System.out.print(this.getMap().getOnTheMapXY(x, y).getSprite().getConsoleImage());
-		                }
-		            }
-		            y = (y + 1) % this.getMap().getHeight();
-		            System.out.print("\n");
-		        }
+		import javax.swing.JFrame;
+
+
+		public void Window()
+		{
+		  
+	
 			
-		}
+		     
+		        this.setTitle("Boulder Dash");
+		        
+		        this.setSize(getWidth(), getHeight());
+		        this.setLocationRelativeTo(null);
+		        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		        this.setVisible(true);
+		        this.setResizable(false);
+		        this.setContentPane(new Map());
+		        this.setVisible(true);
+		     }
+		
+//		public void show(int yStart){
+//		     int y = yStart % this.Map();
+//		        for (int view = 0; view < this.getView(); view++) {
+//		            for (int x = 0; x < this.getMap().getWidth(); x++) {
+//		                if ((x == this.getMyHero().getX()) && (y == yStart)) {
+//		                    System.out.print(this.getMyHero().getSprite().getConsoleImage());
+//		                } else {
+//		                    System.out.print(this.getMap().getOnTheMapXY(x, y).getSprite().getConsoleImage());
+//		                }
+//		            }
+//		            y = (y + 1) % this.getMap().getHeight();
+//		            System.out.print("\n");
+//		        }
+//			
+//		}
 		public static UserOrder keyCodeToUserOrder(final int keyCode){
 			
 			UserOrder userOrder;
@@ -125,23 +139,20 @@ public class BoulderdashView implements Runnable, KeyListener, IBoulderdashView 
 			{
 				return this.map;
 			}
-			public void setMap(final IMap map)throws IOException
+			public void setMap(final IMap map)
 			{
 				this.map = map;
-		        for (int x = 0; x < this.getMap().getWidth(); x++) {
-		            for (int y = 0; y < this.getMap().getHeight(); y++) {
-		                this.getMap().getOnTheMapXY(x, y).getSprite().loadImage();
-		            }
-		        }
+		        
+		    
 			}
 		
 			public IMobile getMyHero()
 			{
-				return this.myHero;
+				return this.getMyHero();
 			}
 			public void setMyHero(final IMobile myHero)
 			{
-				this.myHero = myHero
+				this.myHero = myHero;
 			}
 			
 			public int getView()
