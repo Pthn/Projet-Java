@@ -16,8 +16,8 @@ public class BlockDiamondFall extends Mobile{
 
 	 // Definition of the state of fall of the diamond //
 	 
-	public BlockDiamondFall(final int x, final int y, IMap map) throws IOException {
-		 super(x, y, sprite, map, Permeability.BLOCKING);
+	public BlockDiamondFall(IMap map) throws IOException {
+		 super(sprite, map, Permeability.BLOCKING);
 	     
 	}
 	

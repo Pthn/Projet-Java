@@ -1,0 +1,10 @@
+view\IBoulderdashView.class
+model\Example.class
+model\IMobile.class
+model\IElement.class
+controller\IOrderPerformer.class
+model\IBoulderdashModel.class
+controller\UserOrder.class
+controller\IBoulderdashController.class
+model\IMap.class
+model\Permeability.class

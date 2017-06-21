@@ -10,12 +10,12 @@ public class BlockRocherFall extends Mobile{
 	
 	// Creation from Rock Sprite //
 	
-	 private static final String spriteRocher = "Rocher.png";
+	 private static final String spriteRocher = "img\rock.png";
 
 	 // Dfinition of the state of fall of the rock //
 	 
-	public BlockRocherFall(final int x, final int y, IMap map) throws IOException {
-		 super(x, y, sprite, map, Permeability.BLOCKING);
+	public BlockRocherFall(IMap map) throws IOException {
+		 super(sprite, map, Permeability.BLOCKING);
 
 	}
 	

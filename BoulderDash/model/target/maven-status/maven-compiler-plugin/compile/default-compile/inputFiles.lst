@@ -1,6 +1,29 @@
-C:\Users\pierr\Desktop\Exia\Projet\Projet Java\BoulderDash-BaseProject\BoulderDash\model\src\main\java\model\dao\package-info.java
-C:\Users\pierr\Desktop\Exia\Projet\Projet Java\BoulderDash-BaseProject\BoulderDash\model\src\main\java\model\package-info.java
-C:\Users\pierr\Desktop\Exia\Projet\Projet Java\BoulderDash-BaseProject\BoulderDash\model\src\main\java\model\dao\AbstractDAO.java
-C:\Users\pierr\Desktop\Exia\Projet\Projet Java\BoulderDash-BaseProject\BoulderDash\model\src\main\java\model\ModelFacade.java
-C:\Users\pierr\Desktop\Exia\Projet\Projet Java\BoulderDash-BaseProject\BoulderDash\model\src\main\java\model\dao\BoulderDashBDDConnector.java
-C:\Users\pierr\Desktop\Exia\Projet\Projet Java\BoulderDash-BaseProject\BoulderDash\model\src\main\java\model\dao\ExampleDAO.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\BoulderdashModelTest.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\motionless\BlockMur.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\dao\AbstractDAO.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\dao\SaveMapDAO.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\motionless\BlockFond.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\mobile\Enemy.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\SpriteTest.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\mobile\MyHero.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\mobile\IMobile.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\motionless\BlockTerre.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\Sprite.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\IElement.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\motionless\BlockDiamond.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\motionless\MotionlessElementsFactory.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\Element.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\mobile\BlockRocherFall.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\motionless\BlockRocher.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\mobile\MobileTest.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\dao\DataDAO.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\Permeability.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\BoulderdashModel.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\IMap.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\motionless\MotionlessElement.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\ModelFacade.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\Map.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\IBoulderdashModel.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\mobile\BlockDiamondFall.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\dao\BoulderdashBDDConnector.java
+C:\Users\pierr\git\Projet-Java\BoulderDash\model\src\main\java\model\element\mobile\Mobile.java

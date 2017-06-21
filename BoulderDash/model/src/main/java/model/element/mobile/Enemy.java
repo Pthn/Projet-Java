@@ -14,8 +14,8 @@ public class Enemy extends Mobile{
 
 	 // Implementation from Enemy //
 	 
-		public Enemy(final int x, final int y, IMap map) throws IOException {
-			 super(x, y, sprite, map, Permeability.BLOCKING);
+		public Enemy(IMap map) throws IOException {
+			 super( sprite, map, Permeability.BLOCKING);
 		 
 		}
 		
