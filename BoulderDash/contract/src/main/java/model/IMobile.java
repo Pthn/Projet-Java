@@ -8,10 +8,10 @@ public interface IMobile {
 		void moveDown();
 		void moveRight();
 		void doNothing();
-		IElement getX();
-		IElement getY();
+//		IElement getX();
+//		IElement getY();
 		public boolean isAlive();
-		public void getSprite();
+
 		
 
 

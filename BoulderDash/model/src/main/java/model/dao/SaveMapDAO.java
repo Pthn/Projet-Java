@@ -10,15 +10,15 @@ public abstract class SaveMapDAO extends AbstractDAO {
 
 
 	// the sql map 
-    private static String sqlmap1  = "{call returnmap1(?)}";
+    private static String sqlmap1  = "{call linegettermap1(?)}";
 
-    private static String sqlmap2 = "{call returnmap2(?)}";
+    private static String sqlmap2 = "{call linegettermap2(?)}";
     
-    private static String sqlmap3 = "{call returnmap3(?)}";
+    private static String sqlmap3 = "{call linegetternmap3(?)}";
     
-    private static String sqlmap4 = "{call returnmap4(?)}";
+    private static String sqlmap4 = "{call linegettermap4(?)}";
     
-    private static String sqlmap5 = "{call returnmap5(?)}";
+    private static String sqlmap5 = "{call linegettermap5(?)}";
 
 
 
@@ -133,7 +133,7 @@ public abstract class SaveMapDAO extends AbstractDAO {
 		    			break;
 		    	}
 		    	int elementRowsize = elementRow.size();
-		    if(elementRowsize >= collumn  )	{
+		    if(collumn <= elementRowsize )	{
 		    
 		     element = elementRow.get(collumn);
 		     

@@ -19,7 +19,19 @@ public class BoulderdashModel implements IBoulderdashModel {
     private IMobile BlockDiamondFall;
     private IMobile enemy;
     private IMobile BlockRocherFall;
+    int herox;
+    int heroy;
+    int idmap;
     
+    public BoulderdashModel( IMap map) throws IOException, SQLException{	
+		this.setMap(new Map());
+        this.setMyHero(new MyHero(herox,heroy, this.getMap()));
+        this.setEnemy(new Enemy(this.getMap()));
+        this.setBlockDiamondFall(new BlockDiamondFall(this.getMap()));
+        this.setBlockRocherFall(new BlockRocherFall(this.getMap()));
+		herox = DataDAO.getheroX(idmap);
+		heroy = DataDAO.getheroY(idmap);
+	}
 
     
    
@@ -48,13 +60,7 @@ public class BoulderdashModel implements IBoulderdashModel {
 		this.BlockRocherFall = (IMobile) blockRocherFall;
 	}
 
-	public BoulderdashModel(final int myHeroStartX, final int myHeroStartY, IMap map) throws IOException, SQLException{	
-		this.setMap(new Map());
-        this.setMyHero(new MyHero(myHeroStartX, myHeroStartY, this.getMap()));
-        this.setEnemy(new Enemy(this.getMap()));
-        this.setBlockDiamondFall(new BlockDiamondFall(this.getMap()));
-        this.setBlockRocherFall(new BlockRocherFall(this.getMap()));
-	}
+	
 	// set and get the map, mobile element and model
 	
 	public IMap getMap(){
@@ -79,7 +85,8 @@ public class BoulderdashModel implements IBoulderdashModel {
 		
 		
 	}
-
+	
+	
 	
 	
 }        

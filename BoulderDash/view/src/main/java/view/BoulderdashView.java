@@ -15,6 +15,7 @@ import controller.IOrderPerformer;
 import controller.UserOrder;
 import model.IMap;
 import model.IMobile;
+import model.IElement;
 
 public class BoulderdashView extends JFrame implements IBoulderdashView{
 
@@ -37,17 +38,17 @@ public class BoulderdashView extends JFrame implements IBoulderdashView{
 				this.setView(mapView);
 				this.setMap(map);
 				this.setMyHero(myHero);
-				this.getMyHero().getSprite();
+				((IElement) this.getMyHero()).getSprite();
 				this.setEnemy(enemy);
-				this.getEnemy().getSprite();
+				((IElement) this.getEnemy()).getSprite();
 				this.setBlockDiamondFall(blockDiamondFall);
-				this.getBlockDiamondFall().getSprite();
+				((IElement) this.getBlockDiamondFall()).getSprite();
 				this.setBlockRocherFall(blockRocherFall);
-				this.getBlockRocherFall().getSprite();
+				((IElement) this.getBlockRocherFall()).getSprite();
 				this.getDiamond();
 				this.setDiamond(diamond);
 				
-				this.setCloseView(new Rectangle(0, this.getMyHero().getY(), this.getMap().getWidth(), mapView));
+				this.setCloseView(closeView);
 			
 				this.setTitle("Boulder Dash");
 		        
@@ -94,8 +95,8 @@ public class BoulderdashView extends JFrame implements IBoulderdashView{
 		}
 		
 		public void followMyHero(){
-			this.getCloseView().y = this.getMyHero().getY() - 1;
-		}
+//			this.getCloseView().y = this.getMyHero().getY() - 1;
+	}
 		
 		
 			

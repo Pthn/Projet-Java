@@ -9,6 +9,7 @@ import model.element.Permeability;
 import model.Map;
 
 
+
 public abstract class Mobile  extends Element implements IMobile{
 	
 	// Declaration of the elements //

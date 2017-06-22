@@ -41,11 +41,11 @@ public class Enemy extends Mobile{
     
     // Method for turning diamond back to static state //
     
-	public final Boolean changeToStatic(){
-		 super.changeToStatic();
-		 this.setSprite(spriteEnemy);
-		return null;
-	} 
-	
+//	public final Boolean changeToStatic(){
+//		 super.changeToStatic();
+//		 this.setSprite(spriteEnemy);
+//		return null;
+//	} 
+//	
 	
 }

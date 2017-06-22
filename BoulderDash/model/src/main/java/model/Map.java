@@ -21,9 +21,6 @@ public class Map extends Observable implements IMap{
 	int row;
 	int collumn;
 	int choicemap;
-
-	
-
 	String elementlist;
 
 	public Map() throws IOException, SQLException{
@@ -34,8 +31,16 @@ public class Map extends Observable implements IMap{
 		height = DataDAO.getHeight(idmap);
 		diamond = DataDAO.getDiamond(idmap);
 		elementlist =  SaveMapDAO.getElement(idmap, row, collumn);
+		int x;
+		int y;
+		for(y = 0; y < height ; y++){
 		
-		this.loadMap();
+			for(x = 0; x < width ; x++){
+				this.setOnTheMapXY(MotionlessElementsFactory.getFromSymbol(SaveMapDAO.getElement(idmap, y, x), null), x, y);
+			}
+			
+		}
+	
 	}
 
 	public int getIdmap( int idmap){
@@ -55,20 +60,12 @@ public class Map extends Observable implements IMap{
 		this.diamond = diamond;
 	}
 	
-	private void loadMap() throws IOException, SQLException{
-		
-		int x;
-		int y;
-		for(y = 0; y < height ; y++){
-		
-			for(x = 0; x < width ; x++){
-				this.setOnTheMapXY(MotionlessElementsFactory.getFromSymbol(SaveMapDAO.getElement(idmap, y, x), null), x, y);
-			}
-			
-		}
-	    
-	
-	}
+//	private void loadMap() throws IOException, SQLException{
+//		
+//		
+//	    
+//	
+//	}
 // get a map of an element double table
 	
 	public int getHeight() {

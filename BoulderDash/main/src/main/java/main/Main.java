@@ -37,7 +37,7 @@ public abstract class Main {
 
 	public static void main(final String[] args) throws IOException, InterruptedException, SQLException {
 
-        final IBoulderdashModel model = new BoulderdashModel(1, 1, map);
+        final IBoulderdashModel model = new BoulderdashModel(map);
         final IBoulderdashView view = new BoulderdashView(model.getMap(), (IMobile) model.getMyHero());
         final IBoulderdashController controller = new BoulderdashController(view,model);
       view.setOrderPerformer(controller.getOrderPerformer());

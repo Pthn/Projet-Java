@@ -26,12 +26,12 @@ public class BlockRocherFall extends Mobile{
        this.setSprite(spriteRocher);
 		
    }
-	
+}
 	// Method turning diamond back to static state //
 	
-	public final Boolean changeToStatic(){
-		 super.changeToStatic();
-		 this.setSprite(spriteRocher);
-		return null;
-	}
-} 
+//	public final Boolean changeToStatic(){
+//		 super;
+//		 this.setSprite(spriteRocher);
+//		return null;
+//	}
+//} 
