@@ -14,6 +14,9 @@ public abstract class DataDAO extends AbstractDAO{
 	    
 	    private static String sqldiamond = "{call diamondgetter(?)}";
 	    
+	    private static String sqlheroX = "{call heroXgetter(?)}";
+	    
+	    private static String sqlheroY = "{call heroYgetter(?)}";
 	    
    public static int getHeight(int idmap) throws SQLException {
 	    	
@@ -67,4 +70,41 @@ public abstract class DataDAO extends AbstractDAO{
 		       
 		       return diamond;
 		    }
+	public static int getheroX(int idmap) throws SQLException {
+    	
+        final CallableStatement callStatement = prepareCall(sqlheroX);
+        int heroX = 0;
+        callStatement.setInt(1, idmap);
+        if (callStatement.execute()) {
+            final ResultSet result = callStatement.getResultSet();
+            if(result.next()){
+            	if(result.first())   {         
+            		heroX = result.getInt(1);
+            	}
+            }
+            result.close();
+            
+        }
+       
+       return heroX;
+    }
+	public static int getheroY(int idmap) throws SQLException {
+    	
+        final CallableStatement callStatement = prepareCall(sqlheroY);
+        int heroY = 0;
+        callStatement.setInt(1, idmap);
+        if (callStatement.execute()) {
+            final ResultSet result = callStatement.getResultSet();
+            if(result.next()){
+            	if(result.first())   {         
+            		heroY = result.getInt(1);
+            	}
+            }
+            result.close();
+            
+        }
+       
+       return heroY;
+    }
+	
 }
