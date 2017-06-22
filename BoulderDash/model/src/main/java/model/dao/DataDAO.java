@@ -22,9 +22,11 @@ public abstract class DataDAO extends AbstractDAO{
 	        callStatement.setInt(1, idmap);
 	        if (callStatement.execute()) {
 	            final ResultSet result = callStatement.getResultSet();
+	            if(result.next()){
 	            	if(result.first())   {         
 	            		height = result.getInt(1);
 	            	}
+	            }
 	            result.close();
 	        }
 	        
@@ -37,9 +39,11 @@ public abstract class DataDAO extends AbstractDAO{
 		        callStatement.setInt(1, idmap);
 		        if (callStatement.execute()) {
 		            final ResultSet result = callStatement.getResultSet();
+		            if(result.next()){
 		            	if(result.first())   {         
 		            		width = result.getInt(1);
 		            	}
+		            }
 		            result.close();
 		        }
 		       
@@ -52,10 +56,13 @@ public abstract class DataDAO extends AbstractDAO{
 		        callStatement.setInt(1, idmap);
 		        if (callStatement.execute()) {
 		            final ResultSet result = callStatement.getResultSet();
+		            if(result.next()){
 		            	if(result.first())   {         
 		            		diamond = result.getInt(1);
 		            	}
+		            }
 		            result.close();
+		            
 		        }
 		       
 		       return diamond;

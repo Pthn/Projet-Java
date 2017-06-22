@@ -48,8 +48,8 @@ public class BoulderdashModel implements IBoulderdashModel {
 		this.BlockRocherFall = (IMobile) blockRocherFall;
 	}
 
-	public BoulderdashModel(final int myHeroStartX, final int myHeroStartY, final DataDAO datadao, IMap map) throws IOException, SQLException{	
-		this.setMap(new Map(null, datadao));
+	public BoulderdashModel(final int myHeroStartX, final int myHeroStartY, IMap map) throws IOException, SQLException{	
+		this.setMap(new Map());
         this.setMyHero(new MyHero(myHeroStartX, myHeroStartY, this.getMap()));
         this.setEnemy(new Enemy(this.getMap()));
         this.setBlockDiamondFall(new BlockDiamondFall(this.getMap()));

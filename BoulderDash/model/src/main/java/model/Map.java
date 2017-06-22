@@ -20,12 +20,16 @@ public class Map extends Observable implements IMap{
 	int idmap;
 	int row;
 	int collumn;
+	int choicemap;
+
+	
+
 	String elementlist;
 
-	public Map(String fileName, DataDAO datadao) throws IOException, SQLException{
+	public Map() throws IOException, SQLException{
 		super();
 	
-		
+		this.getIdmap(idmap);
 		width = DataDAO.getWidth(idmap);
 		height = DataDAO.getHeight(idmap);
 		diamond = DataDAO.getDiamond(idmap);
@@ -33,27 +37,23 @@ public class Map extends Observable implements IMap{
 		
 		this.loadMap();
 	}
-//	public int getIdmap(int idmap){
-//		switch(idmap){
-//		
-//		case 1 : 	
-//				idmap=1;
-//				break;
-//		case 2 : 
-//				idmap=2;
-//				break;
-//		case 3 : 
-//				idmap=3;
-//				break;
-//		case 4 : 
-//				idmap=4;
-//				break;
-//		case 5 : 
-//				idmap=5;
-//				break;
-//		}
-//		return idmap;
-//	} 
+
+	public int getIdmap( int idmap){
+	
+			for(int i = 0; i<diamond; i++){
+				if(i >= diamond){
+					idmap = +1;
+				}
+			}
+			
+		return idmap;
+	} 
+	public int getDiamond() {
+		return diamond;
+	}
+	public void setDiamond(int diamond) {
+		this.diamond = diamond;
+	}
 	
 	private void loadMap() throws IOException, SQLException{
 		
@@ -62,7 +62,7 @@ public class Map extends Observable implements IMap{
 		for(y = 0; y < height ; y++){
 		
 			for(x = 0; x < width ; x++){
-				this.setOnTheMapXY(MotionlessElementsFactory.getFromSymbol(SaveMapDAO.getElement(y, x, y), null), x, y);
+				this.setOnTheMapXY(MotionlessElementsFactory.getFromSymbol(SaveMapDAO.getElement(1, 5, 5), null), x, y);
 			}
 			
 		}
@@ -86,6 +86,7 @@ public class Map extends Observable implements IMap{
 	public void setWidth(int width) {
 		this.width = width;
 	}
+	
 
 	public IElement getOnTheMapXY(final int x, final int y){
 		return this.onTheMap[x][y];
