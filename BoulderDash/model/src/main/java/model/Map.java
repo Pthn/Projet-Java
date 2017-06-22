@@ -42,7 +42,7 @@ public class Map extends Observable implements IMap{
 	
 			for(int i = 0; i<diamond; i++){
 				if(i >= diamond){
-					idmap = +1;
+					idmap = idmap +1;
 				}
 			}
 			
@@ -62,7 +62,7 @@ public class Map extends Observable implements IMap{
 		for(y = 0; y < height ; y++){
 		
 			for(x = 0; x < width ; x++){
-				this.setOnTheMapXY(MotionlessElementsFactory.getFromSymbol(SaveMapDAO.getElement(1, 5, 5), null), x, y);
+				this.setOnTheMapXY(MotionlessElementsFactory.getFromSymbol(SaveMapDAO.getElement(idmap, y, x), null), x, y);
 			}
 			
 		}

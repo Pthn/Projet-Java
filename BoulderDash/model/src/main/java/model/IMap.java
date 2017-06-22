@@ -7,6 +7,7 @@ import model.element.IElement;
 
 public interface IMap {
  
+
 	public IElement getOnTheMapXY(int x, int y);
 	public void setMobileHasChanged();
 	public Observable getObservable();

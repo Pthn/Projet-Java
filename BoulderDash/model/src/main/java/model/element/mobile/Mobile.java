@@ -1,54 +1,59 @@
 package model.element.mobile;
-import java.awt.Point;
+
  
+import model.IElement;
 import model.IMap;
 import model.IMobile;
 import model.element.Element;
 import model.element.Permeability;
+import model.Map;
 
 
 public abstract class Mobile  extends Element implements IMobile{
 	
 	// Declaration of the elements //
 
-	protected Point position;
+
 	protected boolean alive = true;
 	protected IMap map;
 	 static String sprite;
-	
+	 IElement[][] onTheMap;
+	 IElement xelement;
+	 IElement yelement;
 	// Implementation of methods concerning mobile elements //
 	
 	Mobile(final String sprite, final IMap map, final Permeability permeability){
         super(sprite, permeability);
         this.setMap(map);
-        this.position = new Point();
+   
 	}
     Mobile(final int x, final int y, final String sprite, final IMap map, final Permeability permeability) {
         this(sprite, map, permeability);
-        this.setX(x);
-        this.setY(y);
+        this.setX(x, y);
+        this.setY(y, y);
     }
     
     // Methods of moving movements of moving elements in the table //
 	
 	public void moveUp(){
-        this.setY(this.getY() - 1);
+        this.setY(this.getOnTheMapXY(-1, 0));
         this.setHasMoved();
 	}
 	
+	
 	public void moveLeft(){
-        this.setX(this.getX() - 1);
+        this.setX(this.getX(), - 1);
         this.setHasMoved();
 	}
 	 
 	public void moveDown(){
-	       this.setY(this.getY() + 1);
+	       this.setY(this.getY() + 1, 0);
 	        this.setHasMoved();
 	    }
 	
 	
 	public void moveRight(){
-		this.setX(this.getX() + 1);
+		this.setX(this.getX(), + 1);
         this.setHasMoved();
 	}
 	
@@ -62,23 +67,32 @@ public abstract class Mobile  extends Element implements IMobile{
 	
 	// Methods of positioning //
 	
-	public int getX(){
-		return this.getPosition().x;
+	public IElement getX(final int x, final int y){
+		return this.onTheMap[x][y];
 	}
 	
-    public final void setX(final int x) {
-        this.getPosition().x = (x + this.getMap().getWidth()) % this.getMap().getWidth();
+    public final void setX(final int x, final int y) {
+      
+		this.onTheMap[x][y] = xelement;
        
         }
+    public IElement getY(final int x, final int y){
+		return this.onTheMap[x][y];
+	}
 	
-    public final int getY() {
-        return this.getPosition().y;
-    }
-
-    public final void setY(final int y) {
-        this.getPosition().y = (y + this.getMap().getHeight()) % this.getMap().getHeight();
-
-    }
+    public final void setY(final int x, final int y) {
+      
+		this.onTheMap[x][y] = yelement;
+       
+        }
+//    public final int getY() {
+//        return this.getPosition().y;
+//    }
+//
+//    public final void setY(final int y) {
+//        this.getPosition().y = (y + this.getMap().getHeight()) % this.getMap().getHeight();
+//
+//    }
     
     // Method of use of the map //
 	
@@ -92,25 +106,18 @@ public abstract class Mobile  extends Element implements IMobile{
 	
 	// Statement of a state //
 	
-	public Boolean isAlive(){
+	public boolean isAlive(){
 		return this.alive;
 	}
 
 	// Method for turning element back to static state //
 	
-    public Boolean changeToStatic() {
-        return this.getMap().getOnTheMapXY(this.getX(), this.getY()).getPermeability() == Permeability.BLOCKING;
-    }
+
 	 
     // Positioning method //
     
-	public Point getPosition(){
-		return this.position;
-	}
-	
-	public void setPosition(final Point position){
-		this.position = position;
-	}
+    
+
 	public void doBreak() {
 		// TODO Auto-generated method stub
 		
