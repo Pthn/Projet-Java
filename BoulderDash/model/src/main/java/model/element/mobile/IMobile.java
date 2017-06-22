@@ -1,7 +1,6 @@
 package model.element.mobile;
 
 import model.IElement;
-
 public interface IMobile {
 
 		void moveUp();
@@ -11,8 +10,7 @@ public interface IMobile {
 		void doNothing();
 		IElement getX();
 		IElement getY();
-
 		public boolean isAlive();
-
+		public void getSprite();
 
 }

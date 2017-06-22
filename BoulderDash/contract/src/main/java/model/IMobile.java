@@ -1,6 +1,5 @@
 package model;
 
-import java.awt.Point;
 import model.IElement;
 public interface IMobile {
 
@@ -12,6 +11,8 @@ public interface IMobile {
 		IElement getX();
 		IElement getY();
 		public boolean isAlive();
+		public void getSprite();
+		
 
 
 
