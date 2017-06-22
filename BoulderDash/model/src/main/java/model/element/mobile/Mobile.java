@@ -36,24 +36,24 @@ public abstract class Mobile  extends Element implements IMobile{
     // Methods of moving movements of moving elements in the table //
 	
 	public void moveUp(){
-        this.setY(this.getOnTheMapXY(-1, 0));
+        this.setMap((IMap) map.getOnTheMapXY(+0, -1));
         this.setHasMoved();
 	}
 	
 	
 	public void moveLeft(){
-        this.setX(this.getX(), - 1);
+        this.setMap((IMap) map.getOnTheMapXY(-1,+0));
         this.setHasMoved();
 	}
 	 
 	public void moveDown(){
-	       this.setY(this.getY() + 1, 0);
+		this.setMap((IMap) map.getOnTheMapXY(+0,+1));
 	        this.setHasMoved();
 	    }
 	
 	
 	public void moveRight(){
-		this.setX(this.getX(), + 1);
+		this.setMap((IMap) map.getOnTheMapXY(+1,+0));
         this.setHasMoved();
 	}
 	
