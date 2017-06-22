@@ -7,6 +7,10 @@ import model.dao.DataDAO;
 import model.dao.SaveMapDAO;
 import model.element.IElement;
 import model.element.motionless.MotionlessElementsFactory;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import model.element.motionless.MotionlessElementsFactory;
 
 
 public class Map extends Observable implements IMap{
@@ -23,7 +27,7 @@ public class Map extends Observable implements IMap{
 	int choicemap;
 	String elementlist;
 
-	public Map() throws IOException, SQLException{
+	public Map(final String fileName) throws IOException, SQLException{
 		super();
 	
 		this.getIdmap(idmap);
@@ -31,15 +35,8 @@ public class Map extends Observable implements IMap{
 		height = DataDAO.getHeight(idmap);
 		diamond = DataDAO.getDiamond(idmap);
 		elementlist =  SaveMapDAO.getElement(idmap, row, collumn);
-		int x;
-		int y;
-		for(y = 0; y < height ; y++){
+		this.loadMap(fileName);
 		
-			for(x = 0; x < width ; x++){
-				this.setOnTheMapXY(MotionlessElementsFactory.getFromSymbol(SaveMapDAO.getElement(idmap, y, x), null), x, y);
-			}
-			
-		}
 	
 	}
 
@@ -59,9 +56,34 @@ public class Map extends Observable implements IMap{
 	public void setDiamond(int diamond) {
 		this.diamond = diamond;
 	}
-	
+	private void loadMap(final String fileName) throws IOException{
+		final BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
+		String line;
+		int y = 0;
+		line = buffer.readLine();
+		this.setWidth(Integer.parseInt(line));
+		line = buffer.readLine();
+		this.setHeight(Integer.parseInt(line));
+		this.onTheMap = new IElement[this.getWidth()][this.getHeight()];
+		line = buffer.readLine();
+		while (line != null){
+			for (int x = 0; x < line.toCharArray().length; x++){
+				this.setOnTheMapXY(MotionlessElementsFactory.getFromSymbol(line.toCharArray()[x]), x, y);
+			}
+			line = buffer.readLine();
+			y++;
+		}
+		buffer.close();
+	}
 //	private void loadMap() throws IOException, SQLException{
 //		
+//		int x;
+//	int y;
+//	for(y = 0; y < height ; y++){
+//	
+//		for(x = 0; x < width ; x++){
+//			this.setOnTheMapXY(MotionlessElementsFactory.getFromSymbol(SaveMapDAO.getElement(idmap, y, x), null), x, y);
+//		}
 //		
 //	    
 //	
@@ -95,7 +117,7 @@ public class Map extends Observable implements IMap{
 	
 
 	// set a map of an element double table
-	private void setOnTheMapXY(final IElement element, final int x, final int y){
+	public void setOnTheMapXY(final IElement element, final int x, final int y){
 		this.onTheMap[x][y] = element;
 	}
 	

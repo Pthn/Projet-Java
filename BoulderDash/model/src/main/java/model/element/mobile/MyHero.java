@@ -2,22 +2,24 @@ package model.element.mobile;
 import java.io.IOException;
 
 import model.IMap;
+import model.element.ISprite;
 import model.element.Permeability;
+import model.element.Sprite;
 
 
 public class MyHero extends Mobile{
 	
 	// Definition of the Sprites according to the displacements //
 	
-    private static final String sprite          = "hero_face";
+    private static final Sprite sprite          = new Sprite('P', "hero_face");
 
-    private static final String spriteTurnLeft  = "hero_left";
+    private static final Sprite spriteTurnLeft  = new Sprite('P', "hero_left");
     
-    private static final String spriteTurnRight = "hero_right";
+    private static final Sprite spriteTurnRight = new Sprite('P', "hero_right");
     
-    private static final String spriteTurnUp = "hero_up";
+    private static final Sprite spriteTurnUp = new Sprite('P', "hero_up");
     
-    private static final String spriteTurnDown = "hero_down";
+    private static final Sprite spriteTurnDown = new Sprite('P', "hero_down");
    
     // Creation from Hero Method //
     
@@ -55,5 +57,23 @@ public class MyHero extends Mobile{
 	    	super.doBreak();
 	    	
 	    }
-	}
+}
+//		
+//		public String setSprite() {
+//			// TODO Auto-generated method stub
+//			return null;
+//		}
+//
+//
+//		public Permeability getPermeability() {
+//			// TODO Auto-generated method stub
+//			return null;
+//		}
+//
+//
+//		public ISprite getSprite() {
+//			// TODO Auto-generated method stub
+//			return null;
+//		}
+//	}
 

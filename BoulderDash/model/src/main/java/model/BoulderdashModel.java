@@ -24,7 +24,7 @@ public class BoulderdashModel implements IBoulderdashModel {
     int idmap;
     
     public BoulderdashModel( IMap map) throws IOException, SQLException{	
-		this.setMap(new Map());
+		this.setMap(map);
         this.setMyHero(new MyHero(herox,heroy, this.getMap()));
         this.setEnemy(new Enemy(this.getMap()));
         this.setBlockDiamondFall(new BlockDiamondFall(this.getMap()));

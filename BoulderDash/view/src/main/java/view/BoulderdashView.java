@@ -12,6 +12,9 @@ import javax.swing.SwingUtilities;
 
 import controller.IOrderPerformer;
 import controller.UserOrder;
+import fr.exia.showboard.BoardFrame;
+import fr.exia.showboard.IPawn;
+import fr.exia.showboard.ISquare;
 import model.IMap;
 import model.IMobile;
 
@@ -75,16 +78,23 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
 	private static final int squareSize = 50;
 	private Rectangle closeView;
 	private IMap map;
-	private IMobile Player;
+	private IMobile myHero;
 	private int view;
+	private static final long serialVersionUID = 1L;
+	private IMobile enemy;
+	private IMobile blockDiamondFall;
+	private IMobile blockRocherFall;
+	private IMap diamond;
+	private int score = 0;
 	private IOrderPerformer orderPerformer;
 		
-	public BoulderdashView(final IMap Map, final IMobile Player) throws IOException{
+	public BoulderdashView(final IMap Map, final IMobile myHero) throws IOException{
 		this.setView(mapView);
 		this.setMap(Map);
-		this.setPlayer(Player);
-		this.getPlayer().getSprite().loadImage();
-		this.setCloseView(new Rectangle(0, this.getPlayer().getY(), this.getMap().getWidth(), mapView));
+		this.setMyHero(myHero);
+		this.getMyHero().getSprite().loadImage();
+		
+		this.setCloseView(new Rectangle(0, this.getMyHero().getY(), this.getMap().getWidth(), mapView));
 		SwingUtilities.invokeLater(this);
 	}
 
@@ -106,10 +116,10 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
 
             for (int x = 0; x < this.getMap().getWidth(); x++) {
                 for (int y = 0; y < this.getMap().getHeight(); y++) {
-                    boardFrame.addSquare(this.map.getOnTheMapXY(x, y), x, y);
+                    boardFrame.addSquare((ISquare) this.map.getOnTheMapXY(x, y), x, y);
                 }
             }
-            boardFrame.addPawn(this.getPlayer());
+            boardFrame.addPawn((IPawn) this.getMyHero());
 
             this.getMap().getObservable().addObserver(boardFrame.getObserver());
             //this.followPlayer();
@@ -118,12 +128,13 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
         }
 	
 	
+	
     public final void show(final int yStart){
     	int y = yStart % this.getMap().getHeight();
     	for (int view = 0; view < this.getView(); view++){
     		for(int x = 0; x < this.getMap().getWidth(); x++){
-    			if((x == this.getPlayer().getX()) && (y == yStart)){
-    				System.out.print(this.getPlayer().getSprite().getConsoleImage());
+    			if((x == this.getMyHero().getX()) && (y == yStart)){
+    				System.out.print(this.getMyHero().getSprite().getConsoleImage());
     			}else{
     				System.out.print(this.getMap().getOnTheMapXY(x, y).getSprite().getConsoleImage());
     			}
@@ -132,6 +143,107 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
     		System.out.print("\n");
     	}
     }
+    public static UserOrder keyCodeToUserOrder(final int keyCode){
+		
+    	UserOrder userOrder;
+			switch (keyCode) {
+			case KeyEvent.VK_RIGHT:
+				userOrder = UserOrder.RIGHT;
+				break;
+			case KeyEvent.VK_LEFT:
+				userOrder = UserOrder.LEFT;
+		        break;
+			case KeyEvent.VK_UP:
+				userOrder = UserOrder.UP;
+		        break;
+		    case KeyEvent.VK_DOWN:
+		        userOrder = UserOrder.DOWN;
+		        break;
+		    default:
+		    	userOrder = UserOrder.NOP;
+		        break;
+			}
+		    return userOrder;
+		    
+    }
+			
+	@Override		
+	public void keyTyped(final KeyEvent keyEvent){
+				
+	}
+	
+	public final void keyPressed(final KeyEvent keyEvent){
+		try {
+			this.getOrderPerformer().orderPerform(keyCodeToUserOrder(keyEvent.getKeyCode()));
+        } catch (final IOException exception) {
+        	exception.printStackTrace();
+        }
+			}
+		
+//	public void keyReleased(final KeyEvent keyEvent){
+//				
+//			}
+			
+	private IMap getMap(){
+		return this.map;
+   	}
+
+   	private void setMap(final IMap map) throws IOException {
+   		this.map = map;
+	    for (int x = 0; x < this.getMap().getWidth(); x++) {
+	    	for (int y = 0; y < this.getMap().getHeight(); y++) {
+	    		this.getMap().getOnTheMapXY(x, y).getSprite().loadImage();
+	    	}
+	    }
+   	}
+
+   
+
+   	public IMobile getMyHero() {
+		return myHero;
+	}
+
+	public void setMyHero(IMobile myHero) {
+		this.myHero = myHero;
+	}
+
+	private int getView(){
+   		return this.view;
+   	}
+
+   	private void setView(final int view){
+   		this.view = view;
+   	}
+
+	       /*	private Rectangle getCloseView(){
+	       		return this.closeView;
+	       	}*/
+
+   	private void setCloseView(final Rectangle closeView){
+   		this.closeView = closeView;
+   	}
+
+   	private IOrderPerformer getOrderPerformer(){
+   		return this.orderPerformer;
+   	}
+
+	public final void setOrderPerformer(final IOrderPerformer orderPerformer) {
+	       		this.orderPerformer = orderPerformer;
+	}
+
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+
+			}
+
+	@Override
+	public void followMyHero() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	}
 
 //		        SwingUtilities.invokeLater(this);
 //		}
@@ -253,104 +365,5 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
 //		        
 //		    
 //			}
-    public static UserOrder keyCodeToUserOrder(final int keyCode){
-				
-    	UserOrder userOrder;
-			switch (keyCode) {
-			case KeyEvent.VK_RIGHT:
-				userOrder = UserOrder.RIGHT;
-				break;
-			case KeyEvent.VK_LEFT:
-				userOrder = UserOrder.LEFT;
-		        break;
-			case KeyEvent.VK_UP:
-				userOrder = UserOrder.UP;
-		        break;
-		    case KeyEvent.VK_DOWN:
-		        userOrder = UserOrder.DOWN;
-		        break;
-		    default:
-		    	userOrder = UserOrder.NOP;
-		        break;
-			}
-		    return userOrder;
-		    
-    }
-			
-	@Override		
-	public void keyTyped(final KeyEvent keyEvent){
-				
-	}
-	
-	public final void keyPressed(final KeyEvent keyEvent){
-		try {
-			this.getOrderPerformer().orderPerform(keyCodeToUserOrder(keyEvent.getKeyCode()));
-        } catch (final IOException exception) {
-        	exception.printStackTrace();
-        }
-			}
-		
-//	public void keyReleased(final KeyEvent keyEvent){
-//				
-//			}
-			
-	private IMap getMap(){
-		return this.map;
-   	}
-
-   	private void setMap(final IMap map) throws IOException {
-   		this.map = map;
-	    for (int x = 0; x < this.getMap().getWidth(); x++) {
-	    	for (int y = 0; y < this.getMap().getHeight(); y++) {
-	    		this.getMap().getOnTheMapXY(x, y).getSprite().loadImage();
-	    	}
-	    }
-   	}
-
-   	private IMobile getPlayer(){
-   		return this.Player;
-   	}
-
-   	private void setPlayer(final IMobile Player){
-   		this.Player = Player;
-   	}
-
-   	private int getView(){
-   		return this.view;
-   	}
-
-   	private void setView(final int view){
-   		this.view = view;
-   	}
-
-	       /*	private Rectangle getCloseView(){
-	       		return this.closeView;
-	       	}*/
-
-   	private void setCloseView(final Rectangle closeView){
-   		this.closeView = closeView;
-   	}
-
-   	private IOrderPerformer getOrderPerformer(){
-   		return this.orderPerformer;
-   	}
-
-	public final void setOrderPerformer(final IOrderPerformer orderPerformer) {
-	       		this.orderPerformer = orderPerformer;
-	}
-
-	@Override
-	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void keyReleased(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-
-			}
-
-	}
 
 

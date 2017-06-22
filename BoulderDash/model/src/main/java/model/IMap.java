@@ -13,7 +13,7 @@ public interface IMap {
 	public Observable getObservable();
 	public int getHeight();
 	public int getWidth();
-
+	void setOnTheMapXY(IElement element, int x, int y);
 
 	
 }

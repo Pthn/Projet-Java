@@ -1,10 +1,12 @@
 package model;
 
+import model.element.Sprite;
+
 public interface IElement {
 	
 	public Permeability getPermeability();
-	public String setSprite();
-	public void getSprite();
+	public Sprite setSprite();
+	public Sprite getSprite();
 	
 
 }
