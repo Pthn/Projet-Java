@@ -5,10 +5,10 @@ import java.awt.LayoutManager;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 
 import controller.IOrderPerformer;
 import controller.UserOrder;
@@ -23,17 +23,25 @@ public class BoulderdashView extends JFrame implements IBoulderdashView{
 	private Rectangle closeView;
 	private int view;
 	public IMap map;
-	private IMobile myHero;
 	private IOrderPerformer orderPerformer;
+	private IMobile myHero;
 	private IMobile enemy;
-
-		
+	private IMobile blockDiamondFall;
+	private IMobile blockRocherFall;
+	
 		public BoulderdashView(final IMap map, final IMobile myHero){
 				
 				this.setView(mapView);
 				this.setMap(map);
 				this.setMyHero(myHero);
 				this.getMyHero().getSprite();
+				this.setEnemy(enemy);
+				this.getEnemy().getSprite();
+				this.setBlockDiamondFall(blockDiamondFall);
+				this.getBlockDiamondFall().getSprite();
+				this.setBlockRocherFall(blockRocherFall);
+				this.getBlockRocherFall().getSprite();
+				
 				this.setCloseView(new Rectangle(0, this.getMyHero().getY(), this.getMap().getWidth(), mapView));
 			
 				this.setTitle("Boulder Dash");
@@ -125,6 +133,21 @@ public class BoulderdashView extends JFrame implements IBoulderdashView{
 				this.enemy = enemy;
 			}
 			
+			public IMobile getBlockDiamondFall(){
+				return this.blockDiamondFall;
+			}
+			
+			public void setBlockDiamondFall(final IMobile blockDiamondFall){
+				this.blockDiamondFall = blockDiamondFall;
+			}
+			
+			public IMobile getBlockRocherFall(){
+				return this.blockRocherFall;
+			}
+			
+			public void setBlockRocherFall(final IMobile blockRocherFall){
+				this.blockRocherFall = blockRocherFall;
+			}
 //			public  void Window(IMap map)
 //			{			 
 //			        this.setTitle("Boulder Dash");
