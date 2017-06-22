@@ -1,7 +1,6 @@
 package model.element.mobile;
 
-import java.awt.Point;
-
+import model.IElement;
 public interface IMobile {
 
 		void moveUp();
@@ -9,10 +8,9 @@ public interface IMobile {
 		void moveDown();
 		void moveRight();
 		void doNothing();
-		int getX();
-		int getY();
-
+		IElement getX();
+		IElement getY();
 		public boolean isAlive();
-		public Point getPosition();
+		public void getSprite();
 
 }

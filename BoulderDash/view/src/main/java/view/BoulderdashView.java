@@ -1,6 +1,7 @@
 package view;
 
 
+import java.awt.Graphics;
 import java.awt.LayoutManager;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
@@ -28,6 +29,8 @@ public class BoulderdashView extends JFrame implements IBoulderdashView{
 	private IMobile enemy;
 	private IMobile blockDiamondFall;
 	private IMobile blockRocherFall;
+	private IMap diamond;
+	private int score = 0;
 	
 		public BoulderdashView(final IMap map, final IMobile myHero){
 				
@@ -41,6 +44,8 @@ public class BoulderdashView extends JFrame implements IBoulderdashView{
 				this.getBlockDiamondFall().getSprite();
 				this.setBlockRocherFall(blockRocherFall);
 				this.getBlockRocherFall().getSprite();
+				this.getDiamond();
+				this.setDiamond(diamond);
 				
 				this.setCloseView(new Rectangle(0, this.getMyHero().getY(), this.getMap().getWidth(), mapView));
 			
@@ -59,7 +64,14 @@ public class BoulderdashView extends JFrame implements IBoulderdashView{
 		        this.setVisible(true);
 		}
 
-		     
+		public void drawScore(Graphics g){
+			g.drawString("Diamond = " + score, 25, 25);
+			
+			//add le if contact avec diament : score + 1 = score
+		}
+		
+		
+		
 //		        SwingUtilities.invokeLater(this);
 //		}
 //		 public IMap displayMap(Graphics g)
@@ -148,6 +160,16 @@ public class BoulderdashView extends JFrame implements IBoulderdashView{
 			public void setBlockRocherFall(final IMobile blockRocherFall){
 				this.blockRocherFall = blockRocherFall;
 			}
+			
+			public IMap getDiamond(){
+				return diamond;
+			}
+			
+			public void setDiamond(IMap diamond){
+				this.diamond = diamond;
+			}
+			
+			
 //			public  void Window(IMap map)
 //			{			 
 //			        this.setTitle("Boulder Dash");
