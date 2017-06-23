@@ -20,7 +20,7 @@ public abstract class Mobile  extends Element implements model.element.mobile.IM
 	private Point position;
 	protected boolean alive = true;
 	protected IMap map;
-	 static Sprite sprite;
+	static Sprite sprite;
 	 IElement[][] onTheMap;
 //	 IElement xelement;
 //	 IElement yelement;

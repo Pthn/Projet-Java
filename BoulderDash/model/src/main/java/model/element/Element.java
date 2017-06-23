@@ -7,13 +7,13 @@ public abstract class Element implements IElement{
 
 
 	
-   private ISprite sprite;
+   private Sprite sprite;
 
 
     protected Permeability permeability;
 
 
-    public Element(ISprite sprite, final Permeability permeability) {
+    public Element(Sprite sprite, final Permeability permeability) {
         this.setSprite((Sprite) sprite);
         this.setPermeability(permeability);
     }

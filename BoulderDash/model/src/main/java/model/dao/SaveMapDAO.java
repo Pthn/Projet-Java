@@ -133,7 +133,7 @@ public abstract class SaveMapDAO extends AbstractDAO {
 		    			break;
 		    	}
 		    	int elementRowsize = elementRow.size();
-		    if(collumn <= elementRowsize )	{
+		    if(collumn < elementRowsize )	{
 		    
 		     element = elementRow.get(collumn);
 		     

@@ -2,7 +2,7 @@ package model.element.mobile;
 import java.io.IOException;
 
 import model.IMap;
-import model.element.ISprite;
+//import model.element.ISprite;
 import model.element.Permeability;
 import model.element.Sprite;
 
