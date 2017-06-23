@@ -2,10 +2,10 @@ package model.element.mobile;
 
 import java.awt.Point;
 
+import fr.exia.showboard.IPawn;
 import model.IElement;
 import model.IMap;
 import model.element.Sprite;
-import fr.exia.showboard.IPawn;
 public interface IMobile  extends IPawn, IElement{
 
 		void moveUp();
