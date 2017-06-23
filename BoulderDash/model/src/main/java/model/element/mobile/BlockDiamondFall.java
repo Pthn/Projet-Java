@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import model.IMap;
 import model.element.Permeability;
+import model.element.Sprite;
 
 
 
@@ -12,7 +13,7 @@ public class BlockDiamondFall extends Mobile{
 
 	// Creation from Diamond Sprite //
 	
-	 private static final String spriteDiamond  = "Diamond.png";
+	 private static final Sprite spriteDiamond  = new Sprite('D', "diamond.png");
 
 	 // Definition of the state of fall of the diamond //
 	 

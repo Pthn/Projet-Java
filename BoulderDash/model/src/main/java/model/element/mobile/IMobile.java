@@ -3,7 +3,7 @@ package model.element.mobile;
 import java.awt.Point;
 
 import fr.exia.showboard.IPawn;
-import model.IElement;
+import model.element.IElement;
 import model.IMap;
 import model.element.Sprite;
 public interface IMobile  extends IPawn, IElement{
@@ -16,7 +16,7 @@ public interface IMobile  extends IPawn, IElement{
 //		IElement getX();
 //		IElement getY();
 		public boolean isAlive();
-		public Sprite getSprite();
+
 		IMap getMap();
 
 

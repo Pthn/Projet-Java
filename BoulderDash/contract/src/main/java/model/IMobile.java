@@ -14,7 +14,7 @@ public interface IMobile  extends IPawn, IElement{
 //		IElement getX();
 //		IElement getY(); 
 		public boolean isAlive();
-		public void getSprite();
+
 		IMap getMap();
 
 		

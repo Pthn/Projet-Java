@@ -4,13 +4,14 @@ import java.io.IOException;
 
 import model.IMap;
 import model.element.Permeability;
+import model.element.Sprite;
 
 
 public class Enemy extends Mobile{
 	
 	// Creation from Enemy Sprite //
 	
-	 private static final String spriteEnemy = "Enemy.png";
+	 private static final Sprite spriteEnemy = new Sprite ('E', "ennemy.png");
 
 	 // Implementation from Enemy //
 	 

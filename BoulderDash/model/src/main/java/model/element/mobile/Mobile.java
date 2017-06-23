@@ -12,14 +12,15 @@ import model.element.Permeability;
 import model.element.Sprite;
 
 
-public abstract class Mobile  extends Element implements IMobile{
+public abstract class Mobile  extends Element implements model.element.mobile.IMobile{
+	
 	
 	// Declaration of the elements //
 
 	private Point position;
 	protected boolean alive = true;
 	protected IMap map;
-	 static String sprite;
+	 static Sprite sprite;
 	 IElement[][] onTheMap;
 //	 IElement xelement;
 //	 IElement yelement;
@@ -106,6 +107,7 @@ public abstract class Mobile  extends Element implements IMobile{
 	private void setHasMoved(){
 		this.getMap().setMobileHasChanged();
 	}
+	
 	
 	// Methods of positioning //
 	

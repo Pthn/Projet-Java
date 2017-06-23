@@ -14,19 +14,19 @@ public abstract class Element implements IElement{
 
 
     public Element(ISprite sprite, final Permeability permeability) {
-        this.setSprite(sprite);
+        this.setSprite((Sprite) sprite);
         this.setPermeability(permeability);
     }
     
 
 // get the sprite of the element
-    public ISprite getSprite() {
+    public Sprite getSprite() {
     	
-        return this.sprite;
+        return (Sprite) this.sprite;
     }
 
 
-    protected void setSprite(final ISprite sprite) {
+    protected void setSprite(final Sprite sprite) {
         this.sprite = sprite;
     }
 

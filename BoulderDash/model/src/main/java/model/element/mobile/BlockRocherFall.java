@@ -4,13 +4,14 @@ import java.io.IOException;
 
 import model.IMap;
 import model.element.Permeability;
+import model.element.Sprite;
 
 
 public class BlockRocherFall extends Mobile{
 	
 	// Creation from Rock Sprite //
 	
-	 private static final String spriteRocher = "img\rock.png";
+	 private static final Sprite spriteRocher = new Sprite('R', "rock.png");
 
 	 // Dfinition of the state of fall of the rock //
 	 

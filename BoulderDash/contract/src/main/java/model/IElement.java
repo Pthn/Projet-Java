@@ -1,12 +1,14 @@
 package model;
 
-import model.element.Sprite;
+import java.awt.Image;
 
-public interface IElement {
-	
+import fr.exia.showboard.ISquare;
+import model.element.Sprite;
+public interface IElement extends ISquare{
+
 	public Permeability getPermeability();
-	public Sprite setSprite();
+
 	public Sprite getSprite();
-	
+	Image getImage();
 
 }
