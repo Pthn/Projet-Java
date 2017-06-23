@@ -81,7 +81,7 @@ public class BoulderdashController implements IBoulderdashController, IOrderPerf
 	
 	private void setModel(final IBoulderdashModel model) {
 		this.model = model;
-	}
+	} 
 	
 	// Stack Order commands //
 	
