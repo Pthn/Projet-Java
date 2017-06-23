@@ -3,7 +3,7 @@ package model;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import model.dao.DataDAO;
+//import model.dao.DataDAO;
 import model.element.mobile.IMobile;
 import model.element.mobile.MyHero;
 import model.element.mobile.BlockDiamondFall;
@@ -23,14 +23,16 @@ public class BoulderdashModel implements IBoulderdashModel {
     int heroy;
     int idmap;
     
-    public BoulderdashModel( IMap map) throws IOException, SQLException{	
-		this.setMap(map);
-        this.setMyHero(new MyHero(herox,heroy, this.getMap()));
-        this.setEnemy(new Enemy(this.getMap()));
-        this.setBlockDiamondFall(new BlockDiamondFall(this.getMap()));
-        this.setBlockRocherFall(new BlockRocherFall(this.getMap()));
-		herox = DataDAO.getheroX(idmap);
-		heroy = DataDAO.getheroY(idmap);
+    public BoulderdashModel( final String fileName, final int myHeroStartX, final int myHeroStartY) throws IOException, SQLException{	
+//		this.setMap(map);
+//        this.setMyHero(new MyHero(herox,heroy, this.getMap()));
+//        this.setEnemy(new Enemy(this.getMap()));
+//        this.setBlockDiamondFall(new BlockDiamondFall(this.getMap()));
+//        this.setBlockRocherFall(new BlockRocherFall(this.getMap()));
+//		herox = DataDAO.getheroX(idmap);
+//		heroy = DataDAO.getheroY(idmap);
+    	 this.setMap(new Map(fileName));
+         this.setMyHero(new MyHero(myHeroStartX, myHeroStartY, this.getMap()));
 	}
 
     

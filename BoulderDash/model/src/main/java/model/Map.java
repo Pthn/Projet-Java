@@ -3,8 +3,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Observable;
 
-import model.dao.DataDAO;
-import model.dao.SaveMapDAO;
+//import model.dao.DataDAO;
+//import model.dao.SaveMapDAO;
 import model.element.IElement;
 import model.element.motionless.MotionlessElementsFactory;
 import java.io.InputStreamReader;
@@ -31,10 +31,10 @@ public class Map extends Observable implements IMap{
 		super();
 	
 		this.getIdmap(idmap);
-		width = DataDAO.getWidth(idmap);
-		height = DataDAO.getHeight(idmap);
-		diamond = DataDAO.getDiamond(idmap);
-		elementlist =  SaveMapDAO.getElement(idmap, row, collumn);
+//		width = DataDAO.getWidth(idmap);
+//		height = DataDAO.getHeight(idmap);
+//		diamond = DataDAO.getDiamond(idmap);
+//		elementlist =  SaveMapDAO.getElement(idmap, row, collumn);
 		this.loadMap(fileName);
 		
 	

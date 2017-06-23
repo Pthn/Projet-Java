@@ -2,6 +2,7 @@ package view;
 
 
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -16,7 +17,10 @@ import fr.exia.showboard.BoardFrame;
 import fr.exia.showboard.IPawn;
 import fr.exia.showboard.ISquare;
 import model.IMap;
-import model.IMobile;
+import model.element.IElement;
+import model.element.Sprite;
+import model.element.mobile.IMobile;
+import model.element.mobile.Mobile;
 //public class BoulderdashView extends JFrame implements IBoulderdashView{
 //
 //	private static final long serialVersionUID = 1L;
@@ -77,17 +81,17 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
 	private static final int squareSize = 50;
 	private Rectangle closeView;
 	private IMap map;
-	private IMobile myHero;
+	private Mobile myHero;
 	private int view;
 	private static final long serialVersionUID = 1L;
-	private IMobile enemy;
-	private IMobile blockDiamondFall;
-	private IMobile blockRocherFall;
+//	private IMobile enemy;
+//	private IMobile blockDiamondFall;
+//	private IMobile blockRocherFall;
 	private IMap diamond;
 	private int score = 0;
 	private IOrderPerformer orderPerformer;
 		
-	public BoulderdashView(final IMap map, final IMobile myHero) throws IOException{
+	public BoulderdashView(final IMap map, final Mobile myHero) throws IOException{
 		this.setView(mapView);
 		this.setMap(map);
 		this.setMyHero(myHero);
@@ -136,7 +140,7 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
     			if((x == this.getMyHero().getX()) && (y == yStart)){    
                     System.out.print(this.getMyHero().getSprite().getConsoleImage());
                 } else {
-                    System.out.print(this.getMap().getOnTheMapXY(x, y).getSprite().getConsoleImage());
+                    System.out.print(((IElement) this.getMap().getOnTheMapXY(x, y)).getSprite().getConsoleImage());
                     }
     		}
     		y = (y+ 1) % this.getMap().getHeight();
@@ -193,7 +197,7 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
    		this.map = map;
 	    for (int x = 0; x < this.getMap().getWidth(); x++) {
 	    	for (int y = 0; y < this.getMap().getHeight(); y++) {
-	    		this.getMap().getOnTheMapXY(x, y).getSprite().loadImage();
+	    		((IElement) this.getMap().getOnTheMapXY(x, y)).getSprite().loadImage();
 	    	}
 	    }
    	}
@@ -205,7 +209,7 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
 	}
 
 	public void setMyHero(IMobile myHero) {
-		this.myHero = myHero;
+		this.myHero = (Mobile) myHero;
 	}
 
 	private int getView(){

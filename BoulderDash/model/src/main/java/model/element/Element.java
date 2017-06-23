@@ -3,10 +3,10 @@ package model.element;
 import java.awt.Image;
 
 public abstract class Element implements IElement{
-	
 
 
-	
+
+
    private Sprite sprite;
 
 
@@ -17,11 +17,11 @@ public abstract class Element implements IElement{
         this.setSprite((Sprite) sprite);
         this.setPermeability(permeability);
     }
-    
+
 
 // get the sprite of the element
     public Sprite getSprite() {
-    	
+
         return (Sprite) this.sprite;
     }
 
@@ -41,11 +41,10 @@ public abstract class Element implements IElement{
     }
 
 
-    
+
 
     public final Image getImage() {
         return this.getSprite().getImage();
     }
 }
-
 
