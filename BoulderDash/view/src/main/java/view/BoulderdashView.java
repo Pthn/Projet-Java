@@ -133,7 +133,7 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
 
     	for (int view = 0; view < this.getView(); view++){
     		for(int x = 0; x < this.getMap().getWidth(); x++){
-    			if((x == this.getMyHero().getX()) && (y == yStart)){
+    			if((x == this.getMyHero().getX()) && (y == yStart)){    
                     System.out.print(this.getMyHero().getSprite().getConsoleImage());
                 } else {
                     System.out.print(this.getMap().getOnTheMapXY(x, y).getSprite().getConsoleImage());
