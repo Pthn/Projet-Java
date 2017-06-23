@@ -18,7 +18,7 @@ public class Sprite implements ISprite {
 	}
 	
 	public Sprite(final char character){
-		this(character, "noimage.jpg");
+		this(character, "hero_face.png");
 	}
 	
 	/* (non-Javadoc)
