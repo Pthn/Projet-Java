@@ -12,7 +12,7 @@ public interface IMobile  extends IPawn, IElement{
 		void moveRight();
 		void doNothing();
 //		IElement getX();
-//		IElement getY();
+//		IElement getY(); 
 		public boolean isAlive();
 		public void getSprite();
 		IMap getMap();
