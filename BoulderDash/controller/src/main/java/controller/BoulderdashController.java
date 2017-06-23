@@ -79,6 +79,7 @@ public class BoulderdashController implements IBoulderdashController, IOrderPerf
 		return this.model;
 	}
 	
+	
 	private void setModel(final IBoulderdashModel model) {
 		this.model = model;
 	} 

@@ -9,6 +9,7 @@ import model.element.Sprite;
 
 
 
+
 public class BlockDiamondFall extends Mobile{
 
 	// Creation from Diamond Sprite //

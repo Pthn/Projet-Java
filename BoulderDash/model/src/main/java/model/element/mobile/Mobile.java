@@ -4,12 +4,13 @@ package model.element.mobile;
 import java.awt.Point;
 
 import fr.exia.showboard.IBoard;
-import model.IElement;
+
 import model.IMap;
 import model.IMobile;
+import model.Permeability;
 import model.element.Element;
-import model.element.Permeability;
 import model.element.Sprite;
+
 
 
 public abstract class Mobile  extends Element implements model.element.mobile.IMobile{
@@ -21,18 +22,18 @@ public abstract class Mobile  extends Element implements model.element.mobile.IM
 	protected boolean alive = true;
 	protected IMap map;
 	static Sprite sprite;
-	 IElement[][] onTheMap;
+	 Element[][] onTheMap;
 //	 IElement xelement;
 //	 IElement yelement;
 	 private IBoard board;
 	// Implementation of methods concerning mobile elements //
 	
-	Mobile(final Sprite sprite, final IMap map, final Permeability permeability){
+	Mobile(final Sprite sprite, final IMap map, final model.element.Permeability permeability){
         super(sprite, permeability);
         this.setMap(map);
    
 	}
-    Mobile(final int x, final int y, final Sprite sprite, final IMap map, final Permeability permeability) {
+    Mobile(final int x, final int y, final Sprite sprite, final IMap map, final model.element.Permeability permeability) {
         this(sprite, map, permeability);
         this.setX(x);
         this.setY(y);
@@ -191,7 +192,7 @@ public abstract class Mobile  extends Element implements model.element.mobile.IM
     // Positioning method //
     
 	public Boolean isDead() {
-        return this.getMap().getOnTheMapXY(this.getX(), this.getY()).getPermeability() == Permeability.BLOCKING;
+        return this.getMap().getOnTheMapXY(this.getX(), this.getY()).getPermeability() == model.element.Permeability.BLOCKING;
     }
 
 	public void doBreak() {

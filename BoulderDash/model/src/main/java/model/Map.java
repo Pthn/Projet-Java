@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Observable;
 
+import model.element.Element;
 //import model.dao.DataDAO;
 //import model.dao.SaveMapDAO;
 import model.element.IElement;
@@ -17,7 +18,7 @@ public class Map extends Observable implements IMap{
 	
 	
 
-	private IElement[][] onTheMap;
+	private Element[][] onTheMap;
 	int height;
 	int width;
 	int diamond;
@@ -64,7 +65,7 @@ public class Map extends Observable implements IMap{
 		this.setWidth(Integer.parseInt(line));
 		line = buffer.readLine();
 		this.setHeight(Integer.parseInt(line));
-		this.onTheMap = new IElement[this.getWidth()][this.getHeight()];
+		this.onTheMap = new Element[this.getWidth()][this.getHeight()];
 		line = buffer.readLine();
 		while (line != null){
 			for (int x = 0; x < line.toCharArray().length; x++){
@@ -107,7 +108,7 @@ public class Map extends Observable implements IMap{
 	}
 	
 
-	public IElement getOnTheMapXY(final int x, final int y){
+	public Element getOnTheMapXY(final int x, final int y){
 		return this.onTheMap[x][y];
 	}
 	
@@ -117,7 +118,7 @@ public class Map extends Observable implements IMap{
 	
 
 	// set a map of an element double table
-	public void setOnTheMapXY(final IElement element, final int x, final int y){
+	public void setOnTheMapXY(final Element element, final int x, final int y){
 		this.onTheMap[x][y] = element;
 	}
 	

@@ -11,15 +11,15 @@ public class MyHero extends Mobile{
 	
 	// Definition of the Sprites according to the displacements //
 	
-    private static final Sprite sprite          = new Sprite('P', "hero_face");
+    private static final Sprite sprite          = new Sprite('H', "hero_face");
 
-    private static final Sprite spriteTurnLeft  = new Sprite('P', "hero_left");
+    private static final Sprite spriteTurnLeft  = new Sprite('H', "hero_left");
     
-    private static final Sprite spriteTurnRight = new Sprite('P', "hero_right");
+    private static final Sprite spriteTurnRight = new Sprite('H', "hero_right");
     
-    private static final Sprite spriteTurnUp = new Sprite('P', "hero_up");
+    private static final Sprite spriteTurnUp = new Sprite('H', "hero_up");
     
-    private static final Sprite spriteTurnDown = new Sprite('P', "hero_down");
+    private static final Sprite spriteTurnDown = new Sprite('H', "hero_down");
    
     // Creation from Hero Method //
     

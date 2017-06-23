@@ -7,7 +7,7 @@ import model.element.Sprite;
 
 public class BlockFond extends MotionlessElement{
 	
-	private static final Sprite SPRITE = new Sprite ('F', "dirt_back.jpg");
+	private static final Sprite SPRITE = new Sprite ('F', "dirt_back.png");
 	// set the permeability and the sprite to block fond
 	
 	BlockFond() {

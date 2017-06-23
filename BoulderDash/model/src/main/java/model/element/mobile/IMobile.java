@@ -3,10 +3,9 @@ package model.element.mobile;
 import java.awt.Point;
 
 import fr.exia.showboard.IPawn;
-import model.element.IElement;
+
 import model.IMap;
-import model.element.Sprite;
-public interface IMobile  extends IPawn, IElement{
+public interface IMobile  extends IPawn, model.element.IElement{
 
 		void moveUp();
 		void moveLeft();
@@ -22,4 +21,5 @@ public interface IMobile  extends IPawn, IElement{
 
 
 		Point getPosition();
+		
 }
