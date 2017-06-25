@@ -1,7 +1,6 @@
 package model.element.motionless;
 
-import model.element.Element;
-import model.element.*;
+
 
 public abstract class MotionlessElementsFactory {
 	
@@ -74,7 +73,7 @@ public abstract class MotionlessElementsFactory {
 			}
 		
 		}
-		return null;
+		return blockFond;
 		
 	}
 }

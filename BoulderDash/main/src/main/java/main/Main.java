@@ -7,14 +7,16 @@ import controller.BoulderdashController;
 import controller.IBoulderdashController;
 import model.BoulderdashModel;
 import model.IBoulderdashModel;
-import model.IMap;
-import model.IMobile;
-//import model.dao.DataDAO;
-import view.BoulderdashView;
-import view.IBoulderdashView;
-
 import model.element.mobile.Mobile;
-public abstract class Main {
+import view.BoulderdashView;
+
+//import model.dao.DataDAO;
+
+import Interface.IBoulderdashView;
+import Interface.IOrderPerformer;
+
+
+public class Main {
 
 
 //    public static void main(final String[] args) {
@@ -27,21 +29,16 @@ public abstract class Main {
 //        }
 //    }
     /** The Constant startX. */
-    private static final int startX = 1;
 
-    /** The Constant startY. */
-    private static final int startY = 1;
-
-	private static IMap map;
 	
 
 
 	public static void main(final String[] args) throws IOException, InterruptedException, SQLException {
 
-        final IBoulderdashModel model = new BoulderdashModel("C:/Users/pierr/git/Projet-Java/BoulderDash/model/src/main/java/model/map2.txt", startX, startY);
+        final IBoulderdashModel model = new BoulderdashModel("C:/Users/pierr/git/Projet-Java/BoulderDash/model/src/main/java/model/map2.txt", 2, 2);
         final IBoulderdashView view = new BoulderdashView(model.getMap(), (Mobile) model.getMyHero());
-        final IBoulderdashController controller = new BoulderdashController(view,model);
-      view.setOrderPerformer(controller.getOrderPerformer());
+        final IBoulderdashController controller = new BoulderdashController((view.IBoulderdashView) view, model);
+      view.setOrderPerformer((IOrderPerformer) controller.getOrderPerformer());
       controller.play();
 	}
 		

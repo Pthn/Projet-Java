@@ -1,6 +1,6 @@
-package view;
+package Interface;
 
-import controller.IOrderPerformer;
+import Interface.IOrderPerformer;
 
 
 public interface IBoulderdashView {

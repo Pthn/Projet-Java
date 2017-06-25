@@ -4,12 +4,14 @@ import java.io.IOException;
 
 import model.IBoulderdashModel;
 import view.IBoulderdashView;
+import controller.IOrderPerformer;
+import controller.UserOrder;
 
 public class BoulderdashController implements IBoulderdashController, IOrderPerformer {
 	
 	// Initialization //
 	
-	private static final int speed = 300;
+	private static final int speed = 60;
 	
 	private IBoulderdashView view;
 	private IBoulderdashModel model;
@@ -29,6 +31,7 @@ public class BoulderdashController implements IBoulderdashController, IOrderPerf
 	public final void play() throws InterruptedException {
 		while(this.getModel().getMyHero().isAlive()) {
 			Thread.sleep(speed);
+			  while (!this.getModel().getMyHero().asWon()){
 			switch (this.getStackOrder()) {
 			case RIGHT:
 				this.getModel().getMyHero().moveRight();
@@ -49,13 +52,28 @@ public class BoulderdashController implements IBoulderdashController, IOrderPerf
 				
 			}
 			this.clearStackOrder();
-			if (this.getModel().getMyHero().isAlive()) {
-				this.getModel().getMyHero().moveDown();
-			}
-			this.getView().followMyHero();
+		      }
+			  //Display win message
+		      this.getView().displayMessage("You Win!");
+		      
+		      break;
+		  }
+		
+		//Check this player is alive and have won again
+		if (this.getModel().getMyHero().isAlive() && this.getModel().getMyHero().asWon()){ 
 		}
-		this.getView().displayMessage("You lose");
+		else{
+			//Check this player is dead and have game over
+			this.getView().displayMessage("You Lose !");
+		}
 	}
+//			if (this.getModel().getMyHero().isAlive()) {
+//				this.getModel().getMyHero().moveDown();
+//			}
+//			this.getView().followMyHero();
+//		}
+//		this.getView().displayMessage("You lose");
+//	}
 	
 	
 

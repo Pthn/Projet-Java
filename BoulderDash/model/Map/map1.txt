@@ -1,10 +1,3 @@
-Indestructible:M
-dirt:T
-diamond:D
-hero_face:H
-Rock:R
-Ennemy:E
-
 MMMMM
 MHTTM
 MTRRM

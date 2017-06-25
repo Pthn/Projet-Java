@@ -3,9 +3,8 @@ package model.element.mobile;
 import java.io.IOException;
 
 import model.IMap;
-import model.element.Permeability;
+import Interface.Permeability;
 import model.element.Sprite;
-
 
 
 
@@ -18,9 +17,9 @@ public class BlockDiamondFall extends Mobile{
 
 	 // Definition of the state of fall of the diamond //
 	 
-	public BlockDiamondFall(IMap map) throws IOException {
-		 super(sprite, map, Permeability.BLOCKING);
-	     
+	public BlockDiamondFall(final int x, final int y, IMap map) throws IOException {
+		 super(spriteDiamond, map, Permeability.BLOCKING,x ,y);
+	     spriteDiamond.loadImage();
 	}
 	
 	// Method moving the diamond when it falls //

@@ -3,7 +3,7 @@ package model.element.mobile;
 import java.io.IOException;
 
 import model.IMap;
-import model.element.Permeability;
+import Interface.Permeability;
 import model.element.Sprite;
 
 
@@ -15,9 +15,9 @@ public class Enemy extends Mobile{
 
 	 // Implementation from Enemy //
 	 
-		public Enemy(IMap map) throws IOException {
-			 super( sprite, map, Permeability.BLOCKING);
-		 
+		public Enemy(final int x, final int y, IMap map) throws IOException {
+			 super(sprite, map, Permeability.ENEMY, x, y);
+			 spriteEnemy.loadImage();
 		}
 		
 		// Method of enemy movements //

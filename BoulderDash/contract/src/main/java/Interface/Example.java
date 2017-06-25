@@ -1,4 +1,4 @@
-package model;
+package Interface;
 
 /**
  * <h1>The Class Example.</h1>

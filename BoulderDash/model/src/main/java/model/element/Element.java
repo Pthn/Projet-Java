@@ -1,6 +1,8 @@
 package model.element;
 
 import java.awt.Image;
+import model.element.Sprite;
+import Interface.Permeability;
 
 public abstract class Element implements IElement{
 
@@ -13,12 +15,22 @@ public abstract class Element implements IElement{
     protected Permeability permeability;
 
 
-    public Element(Sprite sprite, final Permeability permeability) {
+    public Element(Sprite sprite, final Permeability permeability, int spriteX, int spriteY) {
         this.setSprite((Sprite) sprite);
         this.setPermeability(permeability);
+		this.setSpriteX(spriteX);
+		this.setSpriteY(spriteY);
     }
 
+    public void setSpriteY(int spriteY) {
+		
+		
+	}
 
+	public void setSpriteX(int spriteX) {
+	
+		
+	}
 // get the sprite of the element
     public Sprite getSprite() {
 

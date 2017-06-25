@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Observable;
 
+
 import model.element.Element;
 //import model.dao.DataDAO;
 //import model.dao.SaveMapDAO;
@@ -11,14 +12,14 @@ import model.element.motionless.MotionlessElementsFactory;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import model.element.motionless.MotionlessElementsFactory;
+
 
 
 public class Map extends Observable implements IMap{
 	
 	
 
-	private Element[][] onTheMap;
+	private IElement[][] onTheMap;
 	int height;
 	int width;
 	int diamond;
@@ -108,7 +109,7 @@ public class Map extends Observable implements IMap{
 	}
 	
 
-	public Element getOnTheMapXY(final int x, final int y){
+	public IElement getOnTheMapXY(final int x, final int y){
 		return this.onTheMap[x][y];
 	}
 	
@@ -118,7 +119,7 @@ public class Map extends Observable implements IMap{
 	
 
 	// set a map of an element double table
-	public void setOnTheMapXY(final Element element, final int x, final int y){
+	public void setOnTheMapXY(final IElement element, final int x, final int y){
 		this.onTheMap[x][y] = element;
 	}
 	
@@ -130,6 +131,8 @@ public class Map extends Observable implements IMap{
 	public void getSprite(){
 		return;
 	}
+
+
 	
 
 	

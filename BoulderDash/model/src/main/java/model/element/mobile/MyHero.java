@@ -3,7 +3,7 @@ import java.io.IOException;
 
 import model.IMap;
 //import model.element.ISprite;
-import model.element.Permeability;
+import Interface.Permeability;
 import model.element.Sprite;
 
 
@@ -11,16 +11,16 @@ public class MyHero extends Mobile{
 	
 	// Definition of the Sprites according to the displacements //
 	
-    private static final Sprite sprite          = new Sprite('H', "hero_face");
+    private static final Sprite sprite          = new Sprite('H', "img\\hero_face.png");
 
-    private static final Sprite spriteTurnLeft  = new Sprite('H', "hero_left");
+    private static final Sprite spriteTurnLeft  = new Sprite('H', "img\\hero_left.png");
     
-    private static final Sprite spriteTurnRight = new Sprite('H', "hero_right");
+    private static final Sprite spriteTurnRight = new Sprite('H', "img\\hero_right.png");
     
-    private static final Sprite spriteTurnUp = new Sprite('H', "hero_up");
+    private static final Sprite spriteTurnUp = new Sprite('H', "img\\hero_up.png");
     
-    private static final Sprite spriteTurnDown = new Sprite('H', "hero_down");
-   
+    private static final Sprite spriteTurnDown = new Sprite('H', "img\\hero_down.png");
+	public static int SCORE = 1;
     // Creation from Hero Method //
     
 	 public MyHero(final int x, final int y, final IMap map) throws IOException {
@@ -53,10 +53,7 @@ public class MyHero extends Mobile{
 	        this.setSprite(sprite);
 	    }
 	    
-	    public void doBreak(){
-	    	super.doBreak();
-	    	
-	    }
+
 }
 //		
 //		public String setSprite() {

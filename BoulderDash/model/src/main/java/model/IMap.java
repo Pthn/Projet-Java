@@ -1,20 +1,18 @@
 package model;
 
-import java.sql.SQLException;
 import java.util.Observable;
 
-import model.element.Element;
+import javax.lang.model.element.Element;
+
 import model.element.IElement;
 
 public interface IMap {
- 
-
-	public Element getOnTheMapXY(int x, int y);
-	public void setMobileHasChanged();
-	public Observable getObservable();
-	public int getHeight();
-	public int getWidth();
-	void setOnTheMapXY(Element element, int x, int y);
-
 	
+	int getWidth();
+	int getHeight();
+	IElement getOnTheMapXY(int x, int y);
+	void setMobileHasChanged();
+	Observable getObservable();
+	public void setOnTheMapXY(final IElement element, final int x, final int y);
+
 }

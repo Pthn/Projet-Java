@@ -3,8 +3,11 @@ package model;
 import java.io.IOException;
 import java.sql.SQLException;
 
+
+import model.IMap;
 //import model.dao.DataDAO;
 import model.element.mobile.IMobile;
+import model.element.mobile.Mobile;
 import model.element.mobile.MyHero;
 import model.element.mobile.BlockDiamondFall;
 import model.element.mobile.BlockRocherFall;
@@ -31,6 +34,8 @@ public class BoulderdashModel implements IBoulderdashModel {
 //        this.setBlockRocherFall(new BlockRocherFall(this.getMap()));
 //		herox = DataDAO.getheroX(idmap);
 //		heroy = DataDAO.getheroY(idmap);
+    	 
+    	
     	 this.setMap(new Map(fileName));
          this.setMyHero(new MyHero(myHeroStartX, myHeroStartY, this.getMap()));
 	}
@@ -47,7 +52,7 @@ public class BoulderdashModel implements IBoulderdashModel {
 	}
 
 	public IMobile getEnemy() {
-		return enemy;
+		return  enemy;
 	}
 
 	public void setEnemy(final Enemy enemy) {
@@ -70,11 +75,11 @@ public class BoulderdashModel implements IBoulderdashModel {
 	}
 	
 	public IMobile getMyHero(){
-		return this.myHero;
+		return  this.myHero;
 	}
 	
-	private void setMap(IMap map){
-		this.map = map;
+	private void setMap(final IMap map){
+		this.map =  map;
 	}
 	
 	private void setMyHero(final MyHero myHero){

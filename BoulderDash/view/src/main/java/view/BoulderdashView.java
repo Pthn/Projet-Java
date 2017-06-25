@@ -11,8 +11,9 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
-import controller.IOrderPerformer;
-import controller.UserOrder;
+import Interface.IBoulderdashView;
+import Interface.IOrderPerformer;
+import Interface.UserOrder;
 import fr.exia.showboard.BoardFrame;
 import fr.exia.showboard.IPawn;
 import fr.exia.showboard.ISquare;
@@ -77,18 +78,17 @@ import model.element.mobile.Mobile;
 		
 	
 public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView {
-	private static final int mapView = 10;
-	private static final int squareSize = 50;
+	private static final int mapView = 19;
+	private static final int squareSize = 20;
 	private Rectangle closeView;
 	private IMap map;
 	private Mobile myHero;
 	private int view;
-	private static final long serialVersionUID = 1L;
+
 //	private IMobile enemy;
 //	private IMobile blockDiamondFall;
 //	private IMobile blockRocherFall;
-	private IMap diamond;
-	private int score = 0;
+
 	private IOrderPerformer orderPerformer;
 		
 	public BoulderdashView(final IMap map, final Mobile myHero) throws IOException{
@@ -204,11 +204,11 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
 
    
 
-   	public IMobile getMyHero() {
+   	public Mobile getMyHero() {
 		return myHero;
 	}
 
-	public void setMyHero(IMobile myHero) {
+	public void setMyHero(Mobile myHero) {
 		this.myHero = (Mobile) myHero;
 	}
 
