@@ -11,7 +11,7 @@ public class BlockRocherFall extends Mobile{
 	
 	// Creation from Rock Sprite //
 	
-	 private static final Sprite spriteRocher = new Sprite('R', "rock.png");
+	 private static final Sprite spriteRocher = new Sprite('R', "C:/Users/pierr/git/Projet-Java/BoulderDash/Sprites/rock.png");
 
 
 	 // Dfinition of the state of fall of the rock //

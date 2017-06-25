@@ -10,7 +10,7 @@ public class Sprite {
 	private String imageName;
 	private char consoleImage;
 	private boolean imageLoaded;
-		
+//	String path = "C:/Users/pierr/git/Projet-Java/BoulderDash/Sprites";
 		
 
 //	public final void loadImage() throws IOException{
@@ -20,6 +20,7 @@ public class Sprite {
 //	 public final void loadImage() throws IOException {
 //	        this.setImage(ImageIO.read(new File("Map/" + this.getImageName())));
 //	    }
+
 	 public Sprite(final char character, final String imageName) {
 	        this.setConsoleImage(character);
 	        this.setImageName(imageName);
@@ -51,7 +52,7 @@ public class Sprite {
 	     *             Signals that an I/O exception has occurred.
 	     */
 	    public final void loadImage() throws IOException {
-	        this.setImage(ImageIO.read(new File("C:/Users/pierr/git/Projet-Java/BoulderDash/Sprites/" + this.getImageName())));
+	        this.setImage(ImageIO.read(new File(this.getImageName())));
 	    }
 
 	    /**

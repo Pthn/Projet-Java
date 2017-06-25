@@ -3,9 +3,12 @@ package controller;
 import java.io.IOException;
 
 import model.IBoulderdashModel;
+import view.BoulderdashView;
 import view.IBoulderdashView;
-import controller.IOrderPerformer;
-import controller.UserOrder;
+import Interface.IOrderPerformer;
+import Interface.UserOrder;
+
+
 
 public class BoulderdashController implements IBoulderdashController, IOrderPerformer {
 	
@@ -13,13 +16,13 @@ public class BoulderdashController implements IBoulderdashController, IOrderPerf
 	
 	private static final int speed = 60;
 	
-	private IBoulderdashView view;
+	private BoulderdashView view;
 	private IBoulderdashModel model;
 	private UserOrder stackOrder;
 
 	// Implementation of the controller //
 	
-	public BoulderdashController(final IBoulderdashView view, final IBoulderdashModel model){
+	public BoulderdashController(final BoulderdashView view, final IBoulderdashModel model){
 		this.setView(view);
 		this.setModel(model);
 		this.clearStackOrder();
@@ -83,11 +86,11 @@ public class BoulderdashController implements IBoulderdashController, IOrderPerf
 	
 	// Get the view //
 	
-	private IBoulderdashView getView(){
+	private BoulderdashView getView(){
 		return this.view;
 	}
 	
-	private void setView(final IBoulderdashView view) {
+	private void setView(final BoulderdashView view) {
 		this.view = view;
 	}
 	

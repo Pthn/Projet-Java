@@ -78,8 +78,8 @@ import model.element.mobile.Mobile;
 		
 	
 public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView {
-	private static final int mapView = 19;
-	private static final int squareSize = 20;
+	private static final int mapView = 20;
+	private static final int squareSize = 30;
 	private Rectangle closeView;
 	private IMap map;
 	private Mobile myHero;

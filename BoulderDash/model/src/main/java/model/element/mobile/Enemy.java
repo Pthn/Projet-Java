@@ -11,7 +11,7 @@ public class Enemy extends Mobile{
 	
 	// Creation from Enemy Sprite //
 	
-	 private static final Sprite spriteEnemy = new Sprite ('E', "ennemy.png");
+	 private static final Sprite spriteEnemy = new Sprite ('E', "C:/Users/pierr/git/Projet-Java/BoulderDash/Sprites/ennemy.png");
 
 	 // Implementation from Enemy //
 	 
