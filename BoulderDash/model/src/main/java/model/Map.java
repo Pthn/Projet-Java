@@ -80,15 +80,12 @@ public class Map extends Observable implements IMap{
 //	private void loadMap() throws IOException, SQLException{
 //		
 //		int x;
-//	int y;
+//		int y;
 //	for(y = 0; y < height ; y++){
 //	
 //		for(x = 0; x < width ; x++){
 //			this.setOnTheMapXY(MotionlessElementsFactory.getFromSymbol(SaveMapDAO.getElement(idmap, y, x), null), x, y);
 //		}
-//		
-//	    
-//	
 //	}
 // get a map of an element double table
 	

@@ -12,7 +12,7 @@ public class BlockRocher extends MotionlessElement{
 	private static int x;
 	private static int y;
 	BlockRocher() {
-		super(SPRITE, Permeability.PUSH,  x, y);
+		super(SPRITE, Permeability.BLOCKING,  x, y);
 	}
 }
   

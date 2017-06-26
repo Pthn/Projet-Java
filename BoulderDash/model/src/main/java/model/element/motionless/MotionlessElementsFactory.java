@@ -42,28 +42,7 @@ public abstract class MotionlessElementsFactory {
 		return blockRocher;
 	}
 	
- //Get the sprite of the element
-//    public static MotionlessElement getFromSymbol(String fileSymbol) {
-//        for (final MotionlessElement motionlessElement : motionlessElements) {
-//            if (motionlessElement.getSprite() == (fileSymbol+".png")) {
-//                return motionlessElement;
-//            }
-//        }
-//		return void;
-//
-//  
-//} 
-//    public static MotionlessElement getFromSymbol(String fileSymbol, Element element) {
-//    	
-//        for (final MotionlessElement MotionlessElement : motionlessElements) {
-//            if (element.getSprite() == (fileSymbol+".png")) {
-//                 return MotionlessElement;
-//            }
-//        }   
-//        return null ;//
-	
-//
-//    }
+
 	public static MotionlessElement getFromSymbol(final char fileSymbol) 
 	{
 		for (final MotionlessElement motionlessElement : motionlessElements) {

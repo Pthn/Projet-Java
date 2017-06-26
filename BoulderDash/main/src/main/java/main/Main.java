@@ -18,23 +18,13 @@ import view.BoulderdashView;
 public class Main {
 
 
-//    public static void main(final String[] args) {
-//        final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
-//
-//        try {
-//            controller.start();
-//        } catch (final SQLException exception) {
-//            exception.printStackTrace();
-//        }
-//    }
-    /** The Constant startX. */
 
 	
 
 
 	public static void main(final String[] args) throws IOException, InterruptedException, SQLException {
 
-        final BoulderdashModel model = new BoulderdashModel("C:/Users/pierr/git/Projet-Java/BoulderDash/model/src/main/java/model/map2.txt", 2, 2);
+        final BoulderdashModel model = new BoulderdashModel("C:/Users/pierr/git/Projet-Java/BoulderDash/model/src/main/java/model/map2.txt", 11, 3);
         final BoulderdashView view =  new BoulderdashView(model.getMap(), (Mobile) model.getMyHero());
         final BoulderdashController controller = new BoulderdashController( view, model);
         view.setOrderPerformer((IOrderPerformer) controller.getOrderPerformer());
@@ -43,12 +33,8 @@ public class Main {
 		
 	
 
-        	
-//       view.setOrderPerformer(controller.getOrderPerformer());
-//       
-//       view.setOrderPerformer(controller.getOrderPeformer());
-//       controller.play();
-//     
+
+  
         	
 	}
       

@@ -22,22 +22,9 @@ import model.element.IElement;
 import model.element.Sprite;
 import model.element.mobile.IMobile;
 import model.element.mobile.Mobile;
-//public class BoulderdashView extends JFrame implements IBoulderdashView{
-//
-//	private static final long serialVersionUID = 1L;
-//	private static int squareSize = 50;
-//	public static int mapView = 10;
-//	private Rectangle closeView;
-//	private int view;
-//	public IMap map;
-//	private IOrderPerformer orderPerformer;
-//	private IMobile myHero;
-//	private IMobile enemy;
-//	private IMobile blockDiamondFall;
-//	private IMobile blockRocherFall;
-//	private IMap diamond;
-//	private int score = 0;
-//	
+
+
+
 //		public BoulderdashView(final IMap map, final IMobile myHero){
 //				
 //				this.setView(mapView);
@@ -78,8 +65,8 @@ import model.element.mobile.Mobile;
 		
 	
 public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView {
-	private static final int mapView = 20;
-	private static final int squareSize = 30;
+	private static final int mapView = 18;
+	private static final int squareSize = 40;
 	private Rectangle closeView;
 	private IMap map;
 	private Mobile myHero;
@@ -88,7 +75,8 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
 //	private IMobile enemy;
 //	private IMobile blockDiamondFall;
 //	private IMobile blockRocherFall;
-
+//	private IMap diamond;
+//	private int score = 0;
 	private IOrderPerformer orderPerformer;
 		
 	public BoulderdashView(final IMap map, final Mobile myHero) throws IOException{
@@ -101,12 +89,12 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
 		SwingUtilities.invokeLater(this);
 	}
 
-	@Override
+	
 	public final void displayMessage(final String message) {
         JOptionPane.showMessageDialog(null, message);
 	}
 
-	@Override
+	
     public final void run() {
     	final BoardFrame boardFrame = new BoardFrame("Boulder Dash");
         boardFrame.setDimension(new Dimension(this.getMap().getWidth(), this.getMap().getHeight()));
@@ -241,14 +229,14 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
 	
 
 			}
-
-
-	public void followMyHero() {
-	
-		
+	public Rectangle getCloseView()
+	{
+		return this.closeView;
 	}
+}
 
-	}
+
+//	}
 
 //		        SwingUtilities.invokeLater(this);
 //		}
@@ -270,50 +258,7 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
 //	        JOptionPane.showMessageDialog(null, message);
 //			
 //		}
-//		
-//		public void followMyHero(){
-////			this.getCloseView().y = this.getMyHero().getY() - 1;
-//	}
-//		
-//		
-//			
-//		
-//			public IMobile getMyHero()
-//			{
-//				return this.getMyHero();
-//			}
-//			public void setMyHero(final IMobile myHero)
-//			{
-//				this.myHero = myHero;
-//			}
-//			
-//			public int getView()
-//			{
-//				return this.view;
-//			}
-//			public void setView(final int view)
-//			{
-//				this.view = view;
-//			}
-//
-//			public Rectangle getCloseView()
-//			{
-//				return this.closeView;
-//			}
-//			public void setCloseView(final Rectangle closeView)
-//			{
-//				this.closeView = closeView;
-//			}
-//			
-//			public IOrderPerformer getOrderPerformer()
-//			{
-//				return this.orderPerformer;
-//			}
-//			public void setOrderPerformer(final IOrderPerformer orderPerformer)
-//			{
-//				this.orderPerformer = orderPerformer;
-//			}
-//			
+
 //			public IMobile getEnemy()
 //			{
 //				return this.enemy;
@@ -360,15 +305,5 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
 //			        this.setVisible(true);
 //			     }
 			
-//			public IMap getMap()
-//			{
-//				return this.map;
-//			}
-//			public void setMap(final IMap map)
-//			{
-//				this.map = map;
-//		        
-//		    
-//			}
 
 

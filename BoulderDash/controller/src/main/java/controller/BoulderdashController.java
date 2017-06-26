@@ -38,15 +38,19 @@ public class BoulderdashController implements IBoulderdashController, IOrderPerf
 			switch (this.getStackOrder()) {
 			case RIGHT:
 				this.getModel().getMyHero().moveRight();
+				 System.out.println("Right");
 				break;
 			case LEFT:
 				this.getModel().getMyHero().moveLeft();
+				System.out.println("Left");
 				break;
 			case UP:
 				this.getModel().getMyHero().moveUp();
+				 System.out.println("UP");
 				break;
 			case DOWN:
 				this.getModel().getMyHero().moveDown();
+				System.out.println("Down");
 				break;
 			case NOP:
 			default:
@@ -55,6 +59,7 @@ public class BoulderdashController implements IBoulderdashController, IOrderPerf
 				
 			}
 			this.clearStackOrder();
+
 		      }
 			  //Display win message
 		      this.getView().displayMessage("You Win!");
@@ -70,13 +75,7 @@ public class BoulderdashController implements IBoulderdashController, IOrderPerf
 			this.getView().displayMessage("You Lose !");
 		}
 	}
-//			if (this.getModel().getMyHero().isAlive()) {
-//				this.getModel().getMyHero().moveDown();
-//			}
-//			this.getView().followMyHero();
-//		}
-//		this.getView().displayMessage("You lose");
-//	}
+
 	
 	
 

@@ -88,10 +88,7 @@ public class BoulderdashModel implements IBoulderdashModel {
 
 
 
-	public void getModel() {
-		
-		
-	}
+
 	
 	
 	

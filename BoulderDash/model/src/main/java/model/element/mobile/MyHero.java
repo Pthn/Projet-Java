@@ -24,8 +24,11 @@ public class MyHero extends Mobile{
     // Creation from Hero Method //
     
 	 public MyHero(final int x, final int y, final IMap map) throws IOException {
-	        super(x, y, sprite, map, Permeability.BLOCKING);
-
+	        super(x, y, sprite, map, Permeability.PLAYER);
+			spriteTurnLeft.loadImage();
+	        spriteTurnRight.loadImage();
+	    	spriteTurnDown.loadImage();
+			spriteTurnUp.loadImage();
 	    }
  
 	// Method for managing displacements or action //
@@ -52,25 +55,16 @@ public class MyHero extends Mobile{
 	        super.doNothing();
 	        this.setSprite(sprite);
 	    }
-	    
+	    protected final void die() {
+			super.die();
+			this.setSprite(sprite);
+			
+	}
+	
+	public final void take() {
+		
+	}
 
 }
-//		
-//		public String setSprite() {
-//			// TODO Auto-generated method stub
-//			return null;
-//		}
-//
-//
-//		public Permeability getPermeability() {
-//			// TODO Auto-generated method stub
-//			return null;
-//		}
-//
-//
-//		public ISprite getSprite() {
-//			// TODO Auto-generated method stub
-//			return null;
-//		}
-//	}
+
 

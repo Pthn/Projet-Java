@@ -30,11 +30,4 @@ public class BlockDiamondFall extends Mobile{
 		
     }
 }
-	// Method for turning diamond back to static state //
-	
-//	public final Boolean changeToStatic(){
-//	//	 super.changeToStatic();
-//		 this.setSprite(spriteDiamond);
-//		return null;
-//	}
-//} 
+
