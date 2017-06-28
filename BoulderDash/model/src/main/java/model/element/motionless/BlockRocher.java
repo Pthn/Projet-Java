@@ -7,7 +7,7 @@ import model.element.Sprite;
 
 public class BlockRocher extends MotionlessElement{
 	
-	private static final Sprite SPRITE = new Sprite('R', "C:/Users/pierr/git/Projet-Java/BoulderDash/Sprites/rock.png");
+	private static final Sprite SPRITE = new Sprite('R', "C:/rock.png");
 	// set the permeability and the sprite to block Rocher
 	private static int x;
 	private static int y;

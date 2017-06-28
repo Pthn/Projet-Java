@@ -13,7 +13,7 @@ public class BlockDiamondFall extends Mobile{
 
 	// Creation from Diamond Sprite //
 	
-	 private static final Sprite spriteDiamond  = new Sprite('D', "C:/Users/pierr/git/Projet-Java/BoulderDash/Sprites/diamond.png");
+	 private static final Sprite spriteDiamond  = new Sprite('D', "C:/diamond.png");
 
 	 // Definition of the state of fall of the diamond //
 	 

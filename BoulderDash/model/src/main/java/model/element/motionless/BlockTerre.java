@@ -7,7 +7,7 @@ import model.element.Sprite;
 
 public class BlockTerre extends MotionlessElement{
 	
-	private static final Sprite SPRITE = new Sprite('T', "C:/Users/pierr/git/Projet-Java/BoulderDash/Sprites/dirt.png");
+	private static final Sprite SPRITE = new Sprite('T', "C:/dirt.png");
 	private static int x;
 	private static int y;
 		

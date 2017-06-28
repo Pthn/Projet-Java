@@ -6,7 +6,7 @@ import model.element.Sprite;
 
 public class BlockDiamond extends MotionlessElement{
 	
-	private static final Sprite SPRITE = new Sprite ('D', "C:/Users/pierr/git/Projet-Java/BoulderDash/Sprites/diamond.png");
+	private static final Sprite SPRITE = new Sprite ('D', "C:/diamond.png");
 	// set the permeability and the sprite to block diamond
 	private static int x;
 	private static int y;
