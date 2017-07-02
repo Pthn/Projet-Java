@@ -16,7 +16,7 @@ public class BlockFond extends MotionlessElement{
 
 	private static int x;
 	private static int y;
-	BlockFond() {
+	public BlockFond() {
 		super(BLOCKFOND, Permeability.PENETRABLE,x,y);
 	}
 }

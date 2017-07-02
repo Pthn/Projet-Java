@@ -2,6 +2,7 @@ package model.element;
 
 import java.awt.Image;
 import model.element.Sprite;
+import model.element.motionless.BlockFond;
 import Interface.Permeability;
 
 public abstract class Element implements IElement{
@@ -10,7 +11,7 @@ public abstract class Element implements IElement{
 
 
    private Sprite sprite;
-
+   private BlockFond fond;
 
     protected Permeability permeability;
 
@@ -58,5 +59,13 @@ public abstract class Element implements IElement{
     public final Image getImage() {
         return this.getSprite().getImage();
     }
+
+    public final BlockFond getFond() {
+		return this.fond;
+	}
+
+	public void setFond(final BlockFond fond) {
+		this.fond = fond;
+	}
 }
 

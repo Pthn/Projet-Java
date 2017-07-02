@@ -214,6 +214,7 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
    	private void setCloseView(final Rectangle closeView){
    		this.closeView = closeView;
    	}
+   	
 
    	private IOrderPerformer getOrderPerformer(){
    		return this.orderPerformer;

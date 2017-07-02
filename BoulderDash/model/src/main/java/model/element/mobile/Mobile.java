@@ -2,11 +2,13 @@ package model.element.mobile;
 
  
 import java.awt.Point;
+import java.io.IOException;
 
 import fr.exia.showboard.IBoard;
 
 import model.IMap;
 import model.element.mobile.IMobile;
+import model.element.motionless.BlockFond;
 import Interface.Permeability;
 import model.element.Element;
 import model.element.Sprite;
@@ -143,16 +145,24 @@ public class Mobile  extends Element implements IMobile{
 
 	
 		//Operator use for move Right
-		public void moveRight() {
+		public void moveRight() throws IOException {
 			if (((Element) this.getMap().getOnTheMapXY(this.getX() + 1, this.getY())).getPermeability() == Permeability.BLOCKING){
 				this.setX(this.getX());
 			}
 			else if (((Element) this.getMap().getOnTheMapXY(this.getX() +1, this.getY())).getPermeability() == Permeability.DIG){
+
 				this.setX(this.getX() + 1);
+				this.getFond().getSprite().loadImage();
+//		        onTheMap[x][y] = new BlockFond();
+		        
+//				this.getMap().getOnTheMapXY(this.getX() +1, this.getY()) = new BlockFond();
+//				onTheMap[x][y] = new BlockFond();
+//				getOnTheMap[ligne][colonne] = new Background(sprite.getX(), sprite.getY());
 			}
 			else if (((Element) this.getMap().getOnTheMapXY(this.getX() + 1, this.getY())).getPermeability() == Permeability.TAKE)
 			{
 				this.setY(this.getX() + 1);
+				
 				System.out.println("+1 Diamand");
 			}
 			else 
@@ -194,7 +204,7 @@ public class Mobile  extends Element implements IMobile{
 
 	    }
 
-	
+		
 
 		public final int getX() {
 	        return this.getPosition().x;
@@ -202,7 +212,9 @@ public class Mobile  extends Element implements IMobile{
 
 	
 		public final void setX(final int x) {
+//			final int y;
 	        this.getPosition().x = x;
+//	        this.getPosition().y = y;
 	        if (this.isDead()) {
 	        	System.out.println("Dead");
 	            this.die();
@@ -211,6 +223,9 @@ public class Mobile  extends Element implements IMobile{
 	        	this.asWon();
 	        	System.out.println("Won");
 	        }
+//	        if(this.getPermeability() == Permeability.DIG){
+//	        	onTheMap[x] = new BlockFond();
+//	        }
 		}
 
 	

@@ -1,6 +1,7 @@
 package model.element.mobile;
 
 import java.awt.Point;
+import java.io.IOException;
 
 import fr.exia.showboard.IPawn;
 
@@ -10,7 +11,7 @@ public interface IMobile  extends IPawn, model.element.IElement{
 		void moveUp();
 		void moveLeft();
 		void moveDown();
-		void moveRight();
+		void moveRight() throws IOException;
 		void moveDownBlock();
 		void doNothing();
 //		IElement getX();
