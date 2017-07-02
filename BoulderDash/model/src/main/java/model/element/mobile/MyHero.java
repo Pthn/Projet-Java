@@ -13,29 +13,16 @@ public class MyHero extends Mobile{
 	
     private static final Sprite sprite          = new Sprite('H', "C:/hero_face.png");
 
-<<<<<<< HEAD
     private static final Sprite spriteTurnLeft  = new Sprite('H', "C:/hero_face.png");
-=======
-    private static final Sprite spriteTurnLeft  = new Sprite('H', "C:/hero_left.png");
->>>>>>> branch 'master' of https://github.com/Pthn/Projet-Java.git
-    
-<<<<<<< HEAD
+
     private static final Sprite spriteTurnRight = new Sprite('H', "C:/hero_face.png");
-=======
-    private static final Sprite spriteTurnRight = new Sprite('H', "C:/hero_right.png");
->>>>>>> branch 'master' of https://github.com/Pthn/Projet-Java.git
-    
-<<<<<<< HEAD
+
     private static final Sprite spriteTurnUp = new Sprite('H', "C:/hero_face.png");
-=======
-    private static final Sprite spriteTurnUp = new Sprite('H', "C:/hero_up.png");
->>>>>>> branch 'master' of https://github.com/Pthn/Projet-Java.git
-    
-<<<<<<< HEAD
+
     private static final Sprite spriteTurnDown = new Sprite('H', "C:/hero_face.png");
-=======
-    private static final Sprite spriteTurnDown = new Sprite('H', "C:/hero_down.png");
->>>>>>> branch 'master' of https://github.com/Pthn/Projet-Java.git
+
+
+
 	public static int SCORE = 1;
     // Creation from Hero Method //
     

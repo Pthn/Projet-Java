@@ -7,7 +7,6 @@ import fr.exia.showboard.IBoard;
 
 import model.IMap;
 import model.element.mobile.IMobile;
-import model.element.motionless.BlockFond;
 import Interface.Permeability;
 import model.element.Element;
 import model.element.Sprite;
@@ -65,7 +64,7 @@ public class Mobile  extends Element implements IMobile{
 			else if (((Element) this.getMap().getOnTheMapXY(this.getX(), this.getY()-1)).getPermeability() == Permeability.DIG)
 			{
 				this.setY(this.getY() - 1);
-				this.getMap().getOnTheMapXY(this.getX(), this.getY()).getSprite()=BlockFond.BLOCKFOND;
+				//this.getMap().getOnTheMapXY(this.getX(), this.getY()).getSprite()=BlockFond.BLOCKFOND;
 				
 			}
 				
