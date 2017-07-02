@@ -2,7 +2,6 @@ package view;
 
 
 import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -19,8 +18,6 @@ import fr.exia.showboard.IPawn;
 import fr.exia.showboard.ISquare;
 import model.IMap;
 import model.element.IElement;
-import model.element.Sprite;
-import model.element.mobile.IMobile;
 import model.element.mobile.Mobile;
 
 
@@ -79,7 +76,7 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
 //	private int score = 0;
 	private IOrderPerformer orderPerformer;
 		
-	public BoulderdashView(final IMap map, final Mobile myHero) throws IOException{
+	public BoulderdashView(final IMap map, final Mobile myHero, final Mobile blockRocherFall) throws IOException{
 		this.setView(mapView);
 		this.setMap(map);
 		this.setMyHero(myHero);
@@ -106,7 +103,9 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
         boardFrame.setFocusTraversalKeysEnabled(false);
 
             for (int x = 0; x < this.getMap().getWidth(); x++) {
+            	System.out.println("colonne");
                 for (int y = 0; y < this.getMap().getHeight(); y++) {
+                	System.out.println("ligne");
                     boardFrame.addSquare((ISquare) this.map.getOnTheMapXY(x, y), x, y);
                 }
             }
@@ -138,7 +137,7 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
     }
     public static UserOrder keyCodeToUserOrder(final int keyCode){
 		
-    	UserOrder userOrder;
+    		UserOrder userOrder;
 			switch (keyCode) {
 			case KeyEvent.VK_RIGHT:
 				userOrder = UserOrder.RIGHT;

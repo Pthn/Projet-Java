@@ -7,6 +7,7 @@ import fr.exia.showboard.IBoard;
 
 import model.IMap;
 import model.element.mobile.IMobile;
+import model.element.motionless.BlockFond;
 import Interface.Permeability;
 import model.element.Element;
 import model.element.Sprite;
@@ -56,17 +57,29 @@ public class Mobile  extends Element implements IMobile{
 
 		//Operator use for move Up
 		public void moveUp() {
-			if(((Element) this.getMap().getOnTheMapXY(this.getX(), this.getY()-1)).getPermeability() == Permeability.BLOCKING){
+			if(((Element) this.getMap().getOnTheMapXY(this.getX(), this.getY()-1)).getPermeability() == Permeability.BLOCKING)
+			{
 				this.setY(this.getY());
 			}
 
-			else if (((Element) this.getMap().getOnTheMapXY(this.getX(), this.getY()-1)).getPermeability() == Permeability.DIG){
-
+			else if (((Element) this.getMap().getOnTheMapXY(this.getX(), this.getY()-1)).getPermeability() == Permeability.DIG)
+			{
 				this.setY(this.getY() - 1);
-			}else if (this.getY() == 0){
+				this.getMap().getOnTheMapXY(this.getX(), this.getY()).getSprite()=BlockFond.BLOCKFOND;
+				
+			}
+				
+			else if (((Element) this.getMap().getOnTheMapXY(this.getX(), this.getY()-1)).getPermeability() == Permeability.TAKE)
+			{
+				this.setY(this.getY() - 1);
+				System.out.println("+1 Diamand");
+			}
+			else if (this.getY() == 0)
+			{
 				this.setY(this.getY());
 			}
-			else{
+			else
+			{
 				this.setY(this.getY() - 1);
 			}
 	
@@ -77,12 +90,21 @@ public class Mobile  extends Element implements IMobile{
 
 		//Operator use for move Left
 		public void moveLeft() {
-			if(((Element) this.getMap().getOnTheMapXY(this.getX() - 1, this.getY())).getPermeability() == Permeability.BLOCKING){
+			if(((Element) this.getMap().getOnTheMapXY(this.getX() - 1, this.getY())).getPermeability() == Permeability.BLOCKING)
+			{
 				this.setX(this.getX());
 			}
-			else if (((Element) this.getMap().getOnTheMapXY(this.getX() - 1, this.getY())).getPermeability() == Permeability.DIG){
+			else if (((Element) this.getMap().getOnTheMapXY(this.getX() - 1, this.getY())).getPermeability() == Permeability.DIG)
+			{
 				this.setX(this.getX() - 1);
-			}else{
+			}
+			else if (((Element) this.getMap().getOnTheMapXY(this.getX() - 1, this.getY())).getPermeability() == Permeability.TAKE)
+			{
+				this.setY(this.getX() - 1);
+				System.out.println("+1 Diamand");
+			}
+			else
+			{
 				this.setX(this.getX() - 1);
 			}
 		
@@ -97,7 +119,22 @@ public class Mobile  extends Element implements IMobile{
 			}
 			else if (((Element) this.getMap().getOnTheMapXY(this.getX(), this.getY()+1)).getPermeability() == Permeability.DIG){
 				this.setY(this.getY() + 1);
-			}else{
+				
+				
+			}
+			else if (((Element) this.getMap().getOnTheMapXY(this.getX(), this.getY() + 1)).getPermeability() == Permeability.TAKE)
+			{
+				this.setY(this.getY() + 1);
+				System.out.println("+1 Diamand");
+			}
+			else if (((Element) this.getMap().getOnTheMapXY(this.getX(), this.getY() + 1)).getPermeability() == Permeability.PLAYER)
+			{
+				this.setY(this.getY() + 1);
+				System.out.println("MORT");
+				this.die();
+			}
+			else
+			{
 				this.setY(this.getY() + 1);
 			}
 	
@@ -114,11 +151,38 @@ public class Mobile  extends Element implements IMobile{
 			else if (((Element) this.getMap().getOnTheMapXY(this.getX() +1, this.getY())).getPermeability() == Permeability.DIG){
 				this.setX(this.getX() + 1);
 			}
-			else {
+			else if (((Element) this.getMap().getOnTheMapXY(this.getX() + 1, this.getY())).getPermeability() == Permeability.TAKE)
+			{
+				this.setY(this.getX() + 1);
+				System.out.println("+1 Diamand");
+			}
+			else 
+			{
 				this.setX(this.getX() + 1);
 			}
 	        this.setHasMoved();
 	    }
+		
+		//Operator use for move Down the BLOCK
+				public void moveDownBlock() {
+					if (((Element) this.getMap().getOnTheMapXY(this.getX(), this.getY() + 1)).getPermeability() == Permeability.BLOCKING){
+						this.setY(this.getY());
+					}
+						
+					else if (((Element) this.getMap().getOnTheMapXY(this.getX(), this.getY() + 1)).getPermeability() == Permeability.TAKE)
+					{
+						this.setY(this.getY());
+
+					}
+					else if (((Element) this.getMap().getOnTheMapXY(this.getX(), this.getY() + 1)).getPermeability() == Permeability.PLAYER)
+					{
+						this.setY(this.getY() + 1);
+						System.out.println("MORT");
+						this.die();
+					}
+			
+			        this.setHasMoved();
+			    }
 
 
 		

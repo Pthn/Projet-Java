@@ -38,23 +38,29 @@ public class BoulderdashController implements IBoulderdashController, IOrderPerf
 			switch (this.getStackOrder()) {
 			case RIGHT:
 				this.getModel().getMyHero().moveRight();
+				//this.getModel().getBlockRocherFall().moveDownBlock();
 				 System.out.println("Right");
 				break;
 			case LEFT:
 				this.getModel().getMyHero().moveLeft();
 				System.out.println("Left");
+				//this.getModel().getBlockRocherFall().moveDownBlock();
+				//System.out.println("Left");
 				break;
 			case UP:
 				this.getModel().getMyHero().moveUp();
+				//this.getModel().getBlockRocherFall().moveDownBlock();
 				 System.out.println("UP");
 				break;
 			case DOWN:
 				this.getModel().getMyHero().moveDown();
+				//this.getModel().getBlockRocherFall().moveDownBlock();
 				System.out.println("Down");
 				break;
 			case NOP:
 			default:
 				this.getModel().getMyHero().doNothing();
+				//this.getModel().getBlockRocherFall().doNothing();
 				break;
 				
 			}

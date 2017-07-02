@@ -7,12 +7,12 @@ import model.element.Sprite;
 
 public class BlockMur extends MotionlessElement{
 	
-	private static final Sprite SPRITE = new Sprite('M', "C:/Users/pierr/git/Projet-Java/BoulderDash/Sprites/indestructible.png");
+	private static final Sprite BLOCKMUR = new Sprite('M', "C:/indestructible.png");
 	// set the permeability and the sprite to block Mur
 	private static int x;
 	private static int y;
 	BlockMur() {
-		super(SPRITE, Permeability.BLOCKING, x, y);
+		super(BLOCKMUR, Permeability.BLOCKING, x, y);
 	}
 }
  

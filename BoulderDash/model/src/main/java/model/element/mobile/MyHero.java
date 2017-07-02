@@ -11,15 +11,15 @@ public class MyHero extends Mobile{
 	
 	// Definition of the Sprites according to the displacements //
 	
-    private static final Sprite sprite          = new Sprite('H', "C:/Users/pierr/git/Projet-Java/BoulderDash/Sprites/hero_face.png");
+    private static final Sprite sprite          = new Sprite('H', "C:/hero_face.png");
 
-    private static final Sprite spriteTurnLeft  = new Sprite('H', "C:/Users/pierr/git/Projet-Java/BoulderDash/Sprites/hero_left.png");
+    private static final Sprite spriteTurnLeft  = new Sprite('H', "C:/hero_face.png");
     
-    private static final Sprite spriteTurnRight = new Sprite('H', "C:/Users/pierr/git/Projet-Java/BoulderDash/Sprites/hero_right.png");
+    private static final Sprite spriteTurnRight = new Sprite('H', "C:/hero_face.png");
     
-    private static final Sprite spriteTurnUp = new Sprite('H', "C:/Users/pierr/git/Projet-Java/BoulderDash/Sprites/hero_up.png");
+    private static final Sprite spriteTurnUp = new Sprite('H', "C:/hero_face.png");
     
-    private static final Sprite spriteTurnDown = new Sprite('H', "C:/Users/pierr/git/Projet-Java/BoulderDash/Sprites/hero_down.png");
+    private static final Sprite spriteTurnDown = new Sprite('H', "C:/hero_face.png");
 	public static int SCORE = 1;
     // Creation from Hero Method //
     

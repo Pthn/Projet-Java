@@ -7,12 +7,12 @@ import model.element.Sprite;
 
 public class BlockFond extends MotionlessElement{
 	
-	private static final Sprite SPRITE = new Sprite ('F', "C:/Users/pierr/git/Projet-Java/BoulderDash/Sprites/dirt_back.png");
-	// set the permeability and the sprite to block fond
+	public static final Sprite BLOCKFOND = new Sprite ('F', "C:/dirt_back.png");
+	
 	private static int x;
 	private static int y;
 	BlockFond() {
-		super(SPRITE, Permeability.PENETRABLE,x,y);
+		super(BLOCKFOND, Permeability.PENETRABLE,x,y);
 	}
 }
   

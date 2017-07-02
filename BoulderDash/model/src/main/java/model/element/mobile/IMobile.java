@@ -11,6 +11,7 @@ public interface IMobile  extends IPawn, model.element.IElement{
 		void moveLeft();
 		void moveDown();
 		void moveRight();
+		void moveDownBlock();
 		void doNothing();
 //		IElement getX();
 		

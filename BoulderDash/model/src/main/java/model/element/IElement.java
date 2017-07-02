@@ -10,4 +10,5 @@ public interface IElement extends ISquare{
     Sprite getSprite();
     Image getImage();
 
+
 }

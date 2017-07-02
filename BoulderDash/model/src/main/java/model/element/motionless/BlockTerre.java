@@ -7,14 +7,14 @@ import model.element.Sprite;
 
 public class BlockTerre extends MotionlessElement{
 	
-	private static final Sprite SPRITE = new Sprite('T', "C:/Users/pierr/git/Projet-Java/BoulderDash/Sprites/dirt.png");
+	private static final Sprite BLOCKTERRE = new Sprite('T', "C:/dirt.png");
 	private static int x;
 	private static int y;
 		
 	// set the permeability and the sprite to block terre
 	
 	BlockTerre() {
-		super(SPRITE, Permeability.DIG, x, y);
+		super(BLOCKTERRE, Permeability.DIG, x, y);
 	}
 }
   
