@@ -9,6 +9,7 @@ import fr.exia.showboard.IBoard;
 import model.IMap;
 import model.element.mobile.IMobile;
 import model.element.motionless.BlockFond;
+import model.element.motionless.MotionlessElement;
 import Interface.Permeability;
 import model.element.Element;
 import model.element.Sprite;
@@ -27,10 +28,11 @@ public class Mobile  extends Element implements IMobile{
 	protected IMap map;
 	static Sprite sprite;
 	 Element[][] onTheMap;
+	 private static final BlockFond blockFond = new BlockFond();
 //	 IElement xelement;
 //	 IElement yelement;
 	 private IBoard board;
-	 
+
 	 private static final int SCOREMAX = 1;
 
 		private Boolean win = false;
@@ -152,8 +154,12 @@ public class Mobile  extends Element implements IMobile{
 			else if (((Element) this.getMap().getOnTheMapXY(this.getX() +1, this.getY())).getPermeability() == Permeability.DIG){
 
 				this.setX(this.getX() + 1);
-				this.getFond().getSprite().loadImage();
+//				this.getFond();
+				this.Dig(this.getX(), this.getY());
+//				this.getX() == x;
 //		        onTheMap[x][y] = new BlockFond();
+//		        getOnTheMap();
+//		        getOnTheMapXY(this.getX() +1, this.getY()) = new MotionlessElement();
 		        
 //				this.getMap().getOnTheMapXY(this.getX() +1, this.getY()) = new BlockFond();
 //				onTheMap[x][y] = new BlockFond();
@@ -204,7 +210,17 @@ public class Mobile  extends Element implements IMobile{
 
 	    }
 
-		
+		public void Dig(final int x, final int y) throws IOException{
+//			this.setFond((BlockFond) blockFond);
+//			this.getFond().getSprite().loadImage();
+//	
+			this.getPosition().y = y;
+			this.getPosition().x = x;
+			map.setOnTheMapXY(blockFond, x, y);
+		}
+	    public MotionlessElement createBlockFond(){
+			return blockFond;
+		}
 
 		public final int getX() {
 	        return this.getPosition().x;
@@ -294,6 +310,7 @@ public class Mobile  extends Element implements IMobile{
 	    protected IBoard getBoard() {
 	        return this.board;
 	    }
+
 	}
 	
 //    

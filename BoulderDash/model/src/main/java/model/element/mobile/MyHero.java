@@ -41,7 +41,7 @@ public class MyHero extends Mobile{
 	        this.setSprite(spriteTurnLeft);
 	    }
 
-	    public final void moveRight() {
+	    public final void moveRight() throws IOException {
 	        super.moveRight();
 	        this.setSprite(spriteTurnRight);
 	    }

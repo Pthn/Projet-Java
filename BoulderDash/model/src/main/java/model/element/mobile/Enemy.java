@@ -27,7 +27,7 @@ public class Enemy extends Mobile{
         this.setSprite(spriteEnemy);
     }
 
-    public final void moveRight() {
+    public final void moveRight() throws IOException {
         super.moveRight();
         this.setSprite(spriteEnemy);
     }

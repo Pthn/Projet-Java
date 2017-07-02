@@ -31,7 +31,7 @@ public class BoulderdashController implements IBoulderdashController, IOrderPerf
 	
 	// Main method of Management //
 	
-	public final void play() throws InterruptedException {
+	public final void play() throws InterruptedException, IOException {
 		while(this.getModel().getMyHero().isAlive()) {
 			Thread.sleep(speed);
 			  while (!this.getModel().getMyHero().asWon()){

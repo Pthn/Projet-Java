@@ -11,7 +11,7 @@ public abstract class Element implements IElement{
 
 
    private Sprite sprite;
-   private BlockFond fond;
+   protected BlockFond fond;
 
     protected Permeability permeability;
 
