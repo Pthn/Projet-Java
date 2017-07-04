@@ -103,21 +103,22 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
         boardFrame.setFocusTraversalKeysEnabled(false);
 
             for (int x = 0; x < this.getMap().getWidth(); x++) {
-            	System.out.println("colonne");
+            	//System.out.println("colonne");
+            	
                 for (int y = 0; y < this.getMap().getHeight(); y++) {
-                	System.out.println("ligne");
+                	//System.out.println("ligne");
                     boardFrame.addSquare((ISquare) this.map.getOnTheMapXY(x, y), x, y);
                 }
             }
-            boardFrame.addPawn((IPawn) this.getMyHero());
+        boardFrame.addPawn((IPawn) this.getMyHero());
 
-            this.getMap().getObservable().addObserver(boardFrame.getObserver());
-            //this.followPlayer();
+        this.getMap().getObservable().addObserver(boardFrame.getObserver());
+        //this.followPlayer();
 
-            boardFrame.setVisible(true);
+        boardFrame.setVisible(true);
         }
 	
-	
+		
 	
     public final void show(final int yStart, final int xStart){
     	int y = yStart % this.getMap().getHeight();
@@ -181,6 +182,7 @@ public class BoulderdashView implements  Runnable, KeyListener, IBoulderdashView
    	}
 
    	private void setMap(final IMap map) throws IOException {
+  
    		this.map = map;
 	    for (int x = 0; x < this.getMap().getWidth(); x++) {
 	    	for (int y = 0; y < this.getMap().getHeight(); y++) {

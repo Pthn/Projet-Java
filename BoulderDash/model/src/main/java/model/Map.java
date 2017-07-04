@@ -106,7 +106,10 @@ public class Map extends Observable implements IMap{
 	}
 	
 
-	public IElement getOnTheMapXY(final int x, final int y){
+	//private int test = 0;
+    public IElement getOnTheMapXY(final int x, final int y){
+    	
+		System.out.println("");
 		return this.onTheMap[x][y];
 	}
 	

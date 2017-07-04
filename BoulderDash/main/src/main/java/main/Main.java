@@ -28,12 +28,12 @@ public class Main {
         final BoulderdashModel model = new BoulderdashModel("C:/map2.txt", 11, 3);
         final BoulderdashView view =  new BoulderdashView(model.getMap(), (Mobile) model.getMyHero(), (Mobile) model.getBlockRocherFall());
 
-       // final BoulderdashModel model = new BoulderdashModel("C:/map2.txt", 2, 3);
-      //  final BoulderdashView view =  new BoulderdashView(model.getMap(), (Mobile) model.getMyHero());
+        // final BoulderdashModel model = new BoulderdashModel("C:/map2.txt", 2, 3);
+        //  final BoulderdashView view =  new BoulderdashView(model.getMap(), (Mobile) model.getMyHero());
 
         final BoulderdashController controller = new BoulderdashController( view, model);
         view.setOrderPerformer((IOrderPerformer) controller.getOrderPerformer());
-      controller.play();
+        controller.play();
 	}
 		
 	

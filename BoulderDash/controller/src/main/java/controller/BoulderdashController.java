@@ -32,8 +32,9 @@ public class BoulderdashController implements IBoulderdashController, IOrderPerf
 	// Main method of Management //
 	
 	public final void play() throws InterruptedException, IOException {
-		while(this.getModel().getMyHero().isAlive()) {
-			Thread.sleep(speed);
+	//	while(this.getModel().getMyHero().isAlive()) {
+
+			//Thread.sleep(speed);
 			  while (!this.getModel().getMyHero().asWon()){
 			switch (this.getStackOrder()) {
 			case RIGHT:
@@ -70,8 +71,8 @@ public class BoulderdashController implements IBoulderdashController, IOrderPerf
 			  //Display win message
 		      this.getView().displayMessage("You Win!");
 		      
-		      break;
-		  }
+		    //  break;
+	//	  }
 		
 		//Check this player is alive and have won again
 		if (this.getModel().getMyHero().isAlive() && this.getModel().getMyHero().asWon()){ 
